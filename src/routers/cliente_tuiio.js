@@ -4,7 +4,7 @@ import { registrarCliente } from "../controllers/cliente_controller.js";
 const router = Router()
 
 
-router.post("/client/register", registrarCliente);
+router.post("security/client/sendCode", registrarCliente);
 
 
 
