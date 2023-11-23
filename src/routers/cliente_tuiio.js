@@ -1,5 +1,6 @@
 import { Router } from "express";
 import {
+  getPersonalInfo,
   sendCodeClient,
   validationCode,
 } from "../controllers/cliente_controller.js";
@@ -13,5 +14,6 @@ router.post(
   bodyParser.json(),
   validationCode
 );
+router.post("/renapo/curp", bodyParser.json(), getPersonalInfo);
 
 export default router;
