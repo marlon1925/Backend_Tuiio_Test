@@ -1,11 +1,17 @@
-import {Router} from 'express'
-import { sendCodeClient } from "../controllers/cliente_controller.js";
+import { Router } from "express";
+import {
+  sendCodeClient,
+  validationCode,
+} from "../controllers/cliente_controller.js";
+import bodyParser from "body-parser";
 
-const router = Router()
+const router = Router();
 
+router.post("/security/client/sendCode", bodyParser.json(), sendCodeClient);
+router.post(
+  "/security/client/validationCode",
+  bodyParser.json(),
+  validationCode
+);
 
-router.post("/security/client/sendCode", sendCodeClient);
-
-
-
-export default router
+export default router;
