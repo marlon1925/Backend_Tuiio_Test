@@ -37,7 +37,7 @@ const validationCode = async (req, res) => {
     );
 
     if (missingFields.length > 0) {
-      return res.status(400).json({
+      return res.status(401).json({
         result: false,
         messages: [
           `Los campos siguientes son requeridos: ${missingFields.join(", ")}`,
@@ -47,7 +47,7 @@ const validationCode = async (req, res) => {
 
     // Verificar que el campo 'code' no esté vacío
     if (!req.body.code || req.body.code.trim() === "") {
-      return res.status(400).json({
+      return res.status(401).json({
         result: false,
         messages: ["El campo 'code' no puede estar vacío"],
       });
@@ -63,7 +63,7 @@ const validationCode = async (req, res) => {
       });
     } else {
       // Código inválido
-      res.status(400).json({
+      res.status(401).json({
         result: false,
         data: { idEnte: 0, idProce: 0, mode: 0 },
         messages: ["Código incorrecto"],
