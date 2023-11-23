@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "type": "module",
   "description": "",
-  "main": "index.js",
+  "main": "src/index.js",
   "engines": {
     "node": "^12.22.0 || ^14.17.0 || >=16.0.0"
   },
