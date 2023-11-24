@@ -1,5 +1,6 @@
 import { Router } from "express";
 import {
+  getJwtGenerate,
   getPersonalInfo,
   sendCodeClient,
   validationCode,
@@ -15,5 +16,6 @@ router.post(
   validationCode
 );
 router.post("/renapo/curp", bodyParser.json(), getPersonalInfo);
-
+router.post("/security/getAccessToken", bodyParser.json(),
+  getJwtGenerate)
 export default router;
