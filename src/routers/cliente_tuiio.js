@@ -1,5 +1,6 @@
 import { Router } from "express";
 import {
+  getJwtGenerate,
   sendCodeClient,
   validationCode,
 } from "../controllers/cliente_controller.js";
@@ -13,5 +14,7 @@ router.post(
   bodyParser.json(),
   validationCode
 );
+router.post("/security/getAccessToken", bodyParser.json(),
+  getJwtGenerate)
 
 export default router;
