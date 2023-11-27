@@ -205,7 +205,7 @@ const onboarding = async (req, res) => {
     res.status(200).json({
       result: true,
       data: {
-        idCliente: null,
+        idCliente: nulsl,
         idExpediente:"208832023011310050700000",
       },
       messages: [],
