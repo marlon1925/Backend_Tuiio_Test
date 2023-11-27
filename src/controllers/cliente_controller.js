@@ -198,13 +198,14 @@ const onboarding = async (req, res) => {
   try {
     const { password } = req.body;
 
-    if (password==null  ) {
+    if (password == null) {
       return res.status(400).json({ result: false, message: "Ingrese correctamente la contraseña." });
     }
 
     res.status(200).json({
       result: true,
       data: {
+        urlWeb: "https://bion.santander.com.mx/?token=TjNS5V1rMTpWOHhoXpPTw+mZzLppFbeQj3K1PUKGXOghtpvmOiwmQQkgNJDBstZiucB3ahna4N42qfadWr0zqgmtSPBn9jtU8RdD/QlCUlsUNWRCX2iPRxt3h9Oz4E8DARQidLu7QT1uehDTq0TeYKijrQkbaGDwhcvFZiJGNs8b3uYLAOWKx/BW+ukSvanIICN37zbiZzPVkjFzRxFrHbn5iZnAuI/PST1qaiTMeOZcezD/sRPY/vhG88QV665IGGhrotX3cJxL06qoH+7drgGTKpOHwCmsSGQNg4SzJkrdOBmmClTzhta/lB+J/PYw5VWn2pmlZh61EM5hxgnVxg==",
         idClient: null,
         idExpediente: "208832023011310050700000",
         code: null,
