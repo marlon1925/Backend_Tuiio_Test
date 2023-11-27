@@ -196,35 +196,24 @@ const getJwtGenerate = async (req, res) => {
 
 const onboarding = async (req, res) => {
   try {
-    if (Object.values(req.body).includes("")) {
-      return res
-        .status(400)
-        .json({ msg: "Lo sentimos, los campos deben estar llenos" });
+    const { idCliente } = req.body;
+
+    if (!idCliente) {
+      return res.status(400).json({ result: false, message: "ID de cliente no proporcionado." });
     }
 
-    // Devolver una variable quemada de verdadero cuando el registro sea exitoso
     res.status(200).json({
       result: true,
       data: {
-        "urlWeb": "https://bion.santander.com.mx/?token=TjNS5V1rMTpWOHhoXpPTw+mZzLppFbeQj3K1PUKGXOghtpvmOiwmQQkgNJDBstZiucB3ahna4N42qfadWr0zqgmtSPBn9jtU8RdD/QlCUlsUNWRCX2iPRxt3h9Oz4E8DARQidLu7QT1uehDTq0TeYKijrQkbaGDwhcvFZiJGNs8b3uYLAOWKx/BW+ukSvanIICN37zbiZzPVkjFzRxFrHbn5iZnAuI/PST1qaiTMeOZcezD/sRPY/vhG88QV665IGGhrotX3cJxL06qoH+7drgGTKpOHwCmsSGQNg4SzJkrdOBmmClTzhta/lB+J/PYw5VWn2pmlZh61EM5hxgnVxg==",
-        "idCliente": "null",
-        "idExpediente": "",
-        "idCliente": null,
-        "idExpediente": "208832023011310050700000",
-        "code": null,
-        "message": null,
-        "opakeToken": null,
-        "evaluation": null
+        idCliente: null,
+        idExpediente:"208832023011310050700000",
       },
       messages: [],
     });
   } catch (error) {
-    console.log(error);
-    // Manejar el error y devolver una variable quemada de falso en caso de error
-    res
-      .status(500)
-      .json({ result: false, messages: [{ message: "Error JWT" }] });
+    console.error(error);
+    res.status(500).json({ result: false, message: "Error en el proceso de onboarding." });
   }
-}
+};
 
 export { sendCodeClient, onboarding, validationCode, getPersonalInfo, getJwtGenerate };
