@@ -205,7 +205,6 @@ const onboarding = async (req, res) => {
     res.status(200).json({
       result: true,
       data: {
-        nomnre:"",
         idClient: null,
         idExpediente: "208832023011310050700000",
         code: null,
