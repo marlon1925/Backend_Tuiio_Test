@@ -196,23 +196,28 @@ const getJwtGenerate = async (req, res) => {
 
 const onboarding = async (req, res) => {
   try {
-    const { idCliente } = req.body;
+    const { password } = req.body;
 
-    if (!idCliente) {
-      return res.status(400).json({ result: false, message: "ID de cliente no proporcionado." });
+    if (password==null  ) {
+      return res.status(400).json({ result: false, message: "Ingrese correctamente la contraseña." });
     }
 
     res.status(200).json({
       result: true,
       data: {
-        idCliente: nulsl,
-        idExpediente:"208832023011310050700000",
+        nomnre:"",
+        idClient: null,
+        idExpediente: "208832023011310050700000",
+        code: null,
+        message: null,
+        opakeToken: null,
+        evaluation: null
       },
       messages: [],
     });
   } catch (error) {
     console.error(error);
-    res.status(500).json({ result: false, message: "Error en el proceso de onboarding." });
+    res.status(500).json({ result: false, message: "Error." });
   }
 };
 
