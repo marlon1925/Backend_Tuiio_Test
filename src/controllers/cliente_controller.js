@@ -196,11 +196,6 @@ const getJwtGenerate = async (req, res) => {
 
 const onboarding = async (req, res) => {
   try {
-    const { password } = req.body;
-
-    if (password == null) {
-      return res.status(400).json({ result: false, message: "Ingrese correctamente la contraseña." });
-    }
 
     res.status(200).json({
       result: true,
@@ -217,8 +212,69 @@ const onboarding = async (req, res) => {
     });
   } catch (error) {
     console.error(error);
+    res.status(500).json({ result: true, message: "Error." });
+  }
+};
+const onboardingRegister = async (req, res) => {
+  try {
+    const result = {
+      result: true,
+      data: {
+        consent: {
+          privacyNotice: "true",
+          state: "true",
+          termsConditions: "true",
+        },
+        data: {
+          bioCic: "211364350",
+          bioEmissionNumber: "01",
+          bioIdentificationType: "INE",
+          bioOCR: "2089124511845",
+          bioReaderKey: "SNSNIN01061609H500",
+          birthdate: "2001-06-16",
+          birthplace: "DF",
+          codCliente: 0,
+          curp: "SASJ010616HDFNNNA3",
+          firstName: "JUAN",
+          gender: "H",
+          lastName: "SANTOS",
+          mail: "cacuangodarwin1999@gmail.com",
+          secondLastName: "SANCHEZ",
+          secondName: " JESUS",
+        },
+        modo: 0,
+        security: {
+          geolocationPassword: {
+            dateAndTime: "2023-01-13 11:17:57",
+            latitude: "-0.1805775",
+            longitude: "-78.4886669",
+          },
+          mode: "I",
+          password: "123580",
+          phrase: "Frase",
+          proceedingsID: "554769202207120121530000",
+          welcomeImageId: 25,
+        },
+      },
+    };
+
+    // Agregar información del dispositivo al JSON
+    result.device = {
+      brandDevice: "Redmi",
+      carrier: "Claro",
+      cellphoneNumber: "0955853566",
+      connectAddress: "192.168.200.34",
+      device: "RKQ1.211001.001",
+      modelDevice: "2201117TG",
+      versionOS: "11",
+    };
+
+    res.status(200).json(result);
+  } catch (error) {
+    console.error(error);
     res.status(500).json({ result: false, message: "Error." });
   }
 };
 
-export { sendCodeClient, onboarding, validationCode, getPersonalInfo, getJwtGenerate };
+
+export { sendCodeClient, onboarding, validationCode, getPersonalInfo, getJwtGenerate,onboardingRegister };

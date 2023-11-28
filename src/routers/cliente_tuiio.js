@@ -5,6 +5,7 @@ import {
   sendCodeClient,
   validationCode,
   onboarding,
+  onboardingRegister,
 } from "../controllers/cliente_controller.js";
 import bodyParser from "body-parser";
 
@@ -21,5 +22,7 @@ router.post("/security/getAccessToken", bodyParser.json(),
   getJwtGenerate);
 router.post("/orchestation/onboarding", bodyParser.json(),
 onboarding);
+router.post("/onboarding/register", bodyParser.json(),
+onboardingRegister);
 
 export default router;
