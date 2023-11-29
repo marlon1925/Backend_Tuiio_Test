@@ -467,8 +467,25 @@ const Address = async (req, res) => {
     console.error(error);
     res.status(500).json({ result: false, message: "Error." });
   }
-  return "asas";
+}
+const kyc = async (req, res) => {
+
+  try {
+    res.status(200).json({
+      data: {
+        idActividad: 3,
+        idEnte: 601765,
+        idPantalla: 3,
+        idProceso: 2,
+      },
+      messages: [],
+      result: true,
+    })
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ result: false, message: "Error." });
+  }
+
 }
 
-
-export { sendCodeClient, onboarding, validationCode, getPersonalInfo, getJwtGenerate, onboardingRegister, cobisOCR, Address };
+export { sendCodeClient, kyc,onboarding, validationCode, getPersonalInfo, getJwtGenerate, onboardingRegister, cobisOCR, Address };

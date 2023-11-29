@@ -8,6 +8,7 @@ import {
   onboardingRegister,
   cobisOCR,
   Address,
+  kyc,
   
 } from "../controllers/cliente_controller.js";
 import bodyParser from "body-parser";
@@ -29,5 +30,6 @@ onboarding);
 router.post("/onboarding/register", bodyParser.json(),
 onboardingRegister);
 router.post("/address", bodyParser.json(),Address);
+router.post("/customer/kycForm", bodyParser.json(),kyc);
 
 export default router;
