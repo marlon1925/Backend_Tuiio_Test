@@ -223,7 +223,7 @@ const cobisOCR = async (req, res) => {
 
   } catch (error) {
     console.error(error);
-    res.status(500).json({ result: true, message: "Error." });
+    res.status(500).json({ result: false, message: "Error." });
   }
 }
 
@@ -373,5 +373,32 @@ const onboardingRegister = async (req, res) => {
   }
 };
 
+const loginRegister = async (req, res) =>{
 
-export { sendCodeClient, onboarding, validationCode, getPersonalInfo, getJwtGenerate, onboardingRegister,cobisOCR };
+  try {
+    res.status(200).json({
+      data: {
+        customerId: "601765",
+        enrollStatus: "S",
+        idActividad: 1,
+        idPantalla: 1,
+        idProceso: 2,
+        idRfc: "JIJB840913EY9",
+        listasNegras: "N",
+        negFiles: "N",
+        nombreCompleto: "BEATRIZ  JIMENEZ JIMENEZ",
+        phoneNumber: "0995855999",
+        sessionTimeOut: "5",
+      },
+      messages: [],
+      result: true,
+    })
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ result: false, message: "Error." });
+  }
+  return "asas";
+}
+
+
+export { sendCodeClient, onboarding, validationCode, getPersonalInfo, getJwtGenerate, onboardingRegister,cobisOCR, loginRegister };
