@@ -155,59 +155,59 @@ const cobisOCR = async (req, res) => {
             text: "SANTOS"
           },
           {
-            "fieldName": "Segundo Apellido / Second Last Name",
-            "name": "PD_LastName2_Out",
-            "text": "SANCHEZ"
+            fieldName: "Segundo Apellido / Second Last Name",
+            name: "PD_LastName2_Out",
+            text: "SANCHEZ"
           },
           {
-            "fieldName": "Clave de Elector / Elector Key",
-            "name": "PD_IdentificationNumber_Out",
-            "text": "SNSNIN01061609H500"
+            fieldName: "Clave de Elector / Elector Key",
+            name: "PD_IdentificationNumber_Out",
+            text: "SNSNIN01061609H500"
           },
           {
-            "fieldName": "Fecha de Nacimiento / Date of Birth",
-            "name": "PD_BirthDate_Out",
-            "text": "16 06 2001"
+            fieldName: "Fecha de Nacimiento / Date of Birth",
+            name: "PD_BirthDate_Out",
+            text: "16 06 2001"
           },
           {
-            "fieldName": "Sexo / Gender",
-            "name": "PD_Sex_Out",
-            "text": "M"
+            fieldName: "Sexo / Gender",
+            name: "PD_Sex_Out",
+            text: "M"
           },
           {
-            "fieldName": "Nacionalidad / Nationality",
-            "name": "PD_Nationality_Out",
-            "text": "MEX"
+            fieldName: "Nacionalidad / Nationality",
+            name: "PD_Nationality_Out",
+            text: "MEX"
           },
           {
-            "fieldName": "Estado de Domicilio / State of Residence",
-            "name": "PD_AddressState_Out",
-            "text": ""
+            fieldName: "Estado de Domicilio / State of Residence",
+            name: "PD_AddressState_Out",
+            text: ""
           },
           {
-            "fieldName": "Dirección  / Address",
-            "name": "PD_AddressStreet_Out",
-            "text": "C TIZITLI MZ 39 LT 2\nCOL REY IZCOATL 56576"
+            fieldName: "Dirección  / Address",
+            name: "PD_AddressStreet_Out",
+            text: "C TIZITLI MZ 39 LT 2\nCOL REY IZCOATL 56576"
           },
           {
-            "fieldName": "Estado de Nacimiento / State of Birt",
-            "name": "PD_BirthPlaceState_Out",
-            "text": "09"
+            fieldName: "Estado de Nacimiento / State of Birt",
+            name: "PD_BirthPlaceState_Out",
+            text: "09"
           },
           {
-            "fieldName": "Fecha de Validez / Expiration Date",
-            "name": "DD_ExpirationDate_Out",
-            "text": "31 12 2031"
+            fieldName: "Fecha de Validez / Expiration Date",
+            name: "DD_ExpirationDate_Out",
+            text: "31 12 2031"
           },
           {
-            "fieldName": "Año de Emisión/ Date of Expedition",
-            "name": "DD_ExpeditionDate_Out",
-            "text": "31 12 27"
+            fieldName: "Año de Emisión/ Date of Expedition",
+            name: "DD_ExpeditionDate_Out",
+            text: "31 12 27"
           },
           {
-            "fieldName": "Document Number",
-            "name": "DD_DocumentNumber_Out",
-            "text": "211364350"
+            fieldName: "Document Number",
+            name: "DD_DocumentNumber_Out",
+            text: "211364350"
           },
           {
             "fieldName": "Año Registro / Registration Date",
