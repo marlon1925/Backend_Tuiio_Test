@@ -488,4 +488,19 @@ const kyc = async (req, res) => {
 
 }
 
-export { sendCodeClient, kyc,onboarding, validationCode, getPersonalInfo, getJwtGenerate, onboardingRegister, cobisOCR, Address };
+
+const simulation = async( req, res) =>{
+  try {
+    res.status(200).json({
+      data: {
+        amountPay: "200"
+      },
+      messages: [],
+      result: true,
+    })
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ result: false, message: "Error." });
+  }
+}
+export { sendCodeClient,simulation, kyc,onboarding, validationCode, getPersonalInfo, getJwtGenerate, onboardingRegister, cobisOCR, Address };
