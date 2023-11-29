@@ -7,7 +7,8 @@ import {
   onboarding,
   onboardingRegister,
   cobisOCR,
-  loginRegister,
+  Address,
+  
 } from "../controllers/cliente_controller.js";
 import bodyParser from "body-parser";
 
@@ -27,5 +28,6 @@ router.post("/orchestation/onboarding", bodyParser.json(),
 onboarding);
 router.post("/onboarding/register", bodyParser.json(),
 onboardingRegister);
+router.post("address", bodyParser.json(),Address);
 
 export default router;

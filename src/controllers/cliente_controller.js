@@ -449,22 +449,16 @@ const onboardingRegister = async (req, res) => {
   }
 };
 
-const loginRegister = async (req, res) => {
+const Address = async (req, res) => {
 
   try {
     res.status(200).json({
       data: {
-        customerId: "601765",
-        enrollStatus: "S",
-        idActividad: 1,
-        idPantalla: 1,
-        idProceso: 2,
-        idRfc: "JIJB840913EY9",
-        listasNegras: "N",
-        negFiles: "N",
-        nombreCompleto: "BEATRIZ  JIMENEZ JIMENEZ",
-        phoneNumber: "0995855999",
-        sessionTimeOut: "5",
+        addressId: 2,
+        customerId: 601765,
+        idActividad: 2,
+        idPantalla: 2,
+        idProcess: 2,
       },
       messages: [],
       result: true,
@@ -477,4 +471,4 @@ const loginRegister = async (req, res) => {
 }
 
 
-export { sendCodeClient, onboarding, validationCode, getPersonalInfo, getJwtGenerate, onboardingRegister, cobisOCR, loginRegister };
+export { sendCodeClient, onboarding, validationCode, getPersonalInfo, getJwtGenerate, onboardingRegister, cobisOCR, Address };
