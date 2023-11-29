@@ -133,26 +133,26 @@ const validationCode = async (req, res) => {
 const cobisOCR = async (req, res) => {
   try {
     res.status(200).json({
-      "result": true,
-      "data": {
-        "idExpediente": "554769202207120121530000",
-        "idValidas": "610375adba3a4b7cb99b545fddbefd7b",
-        "documentType": "MX_IDCard_2019",
-        "ocr": [
+      result: true,
+      data: {
+        idExpediente: "554769202207120121530000",
+        idValidas: "610375adba3a4b7cb99b545fddbefd7b",
+        documentType: "MX_IDCard_2019",
+        ocr: [
           {
-            "fieldName": "Nombre / Name",
-            "name": "PD_Name_Out",
-            "text": "JUAN JESUS"
+            fieldName: "Nombre / Name",
+            name: "PD_Name_Out",
+            text: "JUAN JESUS"
           },
           {
-            "fieldName": "Apellidos / Last Name",
-            "name": "PD_LastName_Out",
-            "text": "SANTOS SANCHEZ"
+            fieldName: "Apellidos / Last Name",
+            name: "PD_LastName_Out",
+            text: "SANTOS SANCHEZ"
           },
           {
-            "fieldName": "Primer Apellido / First Last Name",
-            "name": "PD_LastName1_Out",
-            "text": "SANTOS"
+            fieldName: "Primer Apellido / First Last Name",
+            name: "PD_LastName1_Out",
+            text: "SANTOS"
           },
           {
             "fieldName": "Segundo Apellido / Second Last Name",
