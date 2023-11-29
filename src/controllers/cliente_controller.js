@@ -133,152 +133,148 @@ const validationCode = async (req, res) => {
 const cobisOCR = async (req, res) => {
   try {
     res.status(200).json({
-      result: true,
-      data: {
-        idExpediente: "554769202207120121530000",
-        idValidas: "610375adba3a4b7cb99b545fddbefd7b",
-        documentType: "MX_IDCard_2019",
-        ocr: [
+      "result": true,
+      "data": {
+        "idExpediente": "554769202207120121530000",
+        "idValidas": "610375adba3a4b7cb99b545fddbefd7b",
+        "documentType": "MX_IDCard_2019",
+        "ocr": [
           {
-            fielName: "Nombre / Name",
-            name: "PD_Name_Out",
-            text: "JUAN JESUS",
+            "fieldName": "Nombre / Name",
+            "name": "PD_Name_Out",
+            "text": "JUAN JESUS"
           },
           {
-            fieldName: "Apellidos / Last Name",
-            name: "PD_LastName_Out",
-            text: "SANTOS SANCHEZ"
+            "fieldName": "Apellidos / Last Name",
+            "name": "PD_LastName_Out",
+            "text": "SANTOS SANCHEZ"
           },
           {
-            fieldName: "Primer Apellido / First Last Name",
-            name: "PD_LastName1_Out",
-            text: "SANTOS"
+            "fieldName": "Primer Apellido / First Last Name",
+            "name": "PD_LastName1_Out",
+            "text": "SANTOS"
           },
           {
-            fieldName: "Segundo Apellido / Second Last Name",
-            name: "PD_LastName2_Out",
-            text: "SANCHEZ"
+            "fieldName": "Segundo Apellido / Second Last Name",
+            "name": "PD_LastName2_Out",
+            "text": "SANCHEZ"
           },
           {
-            fieldName: "Clave de Elector / Elector Key",
-            name: "PD_IdentificationNumber_Out",
-            text: "SNSNIN01061609H500"
+            "fieldName": "Clave de Elector / Elector Key",
+            "name": "PD_IdentificationNumber_Out",
+            "text": "SNSNIN01061609H500"
           },
           {
-              fieldName: "Fecha de Nacimiento / Date of Birth",
-              name: "PD_BirthDate_Out",
-              text: "16 06 2001"
+            "fieldName": "Fecha de Nacimiento / Date of Birth",
+            "name": "PD_BirthDate_Out",
+            "text": "16 06 2001"
           },
           {
-              fieldName: "Sexo / Gender",
-              name: "PD_Sex_Out",
-              text: "M"
+            "fieldName": "Sexo / Gender",
+            "name": "PD_Sex_Out",
+            "text": "M"
           },
           {
-              fieldName: "Nacionalidad / Nationality",
-              name: "PD_Nationality_Out",
-              text: "MEX"
+            "fieldName": "Nacionalidad / Nationality",
+            "name": "PD_Nationality_Out",
+            "text": "MEX"
           },
           {
-              fieldName: "Estado de Domicilio / State of Residence",
-              name: "PD_AddressState_Out",
-              text: ""
+            "fieldName": "Estado de Domicilio / State of Residence",
+            "name": "PD_AddressState_Out",
+            "text": ""
           },
           {
-              fieldName: "Dirección  / Address",
-              name: "PD_AddressStreet_Out",
-              text: "C TIZITLI MZ 39 LT 2\nCOL REY IZCOATL 56576"
+            "fieldName": "Dirección  / Address",
+            "name": "PD_AddressStreet_Out",
+            "text": "C TIZITLI MZ 39 LT 2\nCOL REY IZCOATL 56576"
           },
           {
-              fieldName: "Estado de Nacimiento / State of Birt",
-              name: "PD_BirthPlaceState_Out",
-              text: "09"
+            "fieldName": "Estado de Nacimiento / State of Birt",
+            "name": "PD_BirthPlaceState_Out",
+            "text": "09"
           },
           {
-              fieldName: "Fecha de Validez / Expiration Date",
-              name: "DD_ExpirationDate_Out",
-              text: "31 12 2031"
+            "fieldName": "Fecha de Validez / Expiration Date",
+            "name": "DD_ExpirationDate_Out",
+            "text": "31 12 2031"
           },
           {
-              fieldName: "Año de Emisión/ Date of Expedition",
-              name: "DD_ExpeditionDate_Out",
-              text: "31 12 27"
+            "fieldName": "Año de Emisión/ Date of Expedition",
+            "name": "DD_ExpeditionDate_Out",
+            "text": "31 12 27"
           },
           {
-              fieldName: "Document Number",
-              name: "DD_DocumentNumber_Out",
-              text: "211364350"
+            "fieldName": "Document Number",
+            "name": "DD_DocumentNumber_Out",
+            "text": "211364350"
           },
           {
-              fieldName: "Año Registro / Registration Date",
-              name: "OD_RegistrationDate_Out",
-              text: "2019"
+            "fieldName": "Año Registro / Registration Date",
+            "name": "OD_RegistrationDate_Out",
+            "text": "2019"
           },
           {
-              fieldName: "CURP / CURP",
-              name: "OD_CURP_Out",
-              text: "SASJ010616HDFNNNA3"
+            "fieldName": "CURP / CURP",
+            "name": "OD_CURP_Out",
+            "text": "SASJ010616HDFNNNA3"
           },
           {
-              fieldName: "Código de Identificación de la Credencial / Code Identification Credential",
-              name: "OD_IDCredentialCode_Out",
-              text: "211364350"
+            "fieldName": "Código de Identificación de la Credencial / Code Identification Credential",
+            "name": "OD_IDCredentialCode_Out",
+            "text": "211364350"
           },
           {
-            fieldName: "Código de Identificación de la Credencial / Code Identification Credential",
-            name: "OD_IDCredentialCode_Out",
-            text: "211364350"
+            "fieldName": "País de expedición / Issuing country",
+            "name": "DD_IssuingCountry_Out",
+            "text": "MEX"
           },
           {
-            fieldName: "País de expedición / Issuing country",
-            name: "DD_IssuingCountry_Out",
-            text: "MEX"
+            "fieldName": "Número OCR / OCR Number",
+            "name": "OD_OCRNumber_Out",
+            "text": "2089124511845"
           },
           {
-            fieldName: "Número OCR / OCR Number",
-            name: "OD_OCRNumber_Out",
-            text: "2089124511845"
+            "fieldName": "Sección / Section",
+            "name": "OD_Section_Out",
+            "text": "2089"
           },
           {
-            fieldName: "Sección / Section",
-            name: "OD_Section_Out",
-            text: "2089"
+            "fieldName": "Número de Emisión / Issue Number",
+            "name": "OD_EmissionNumber_Out",
+            "text": "01"
           },
           {
-            fieldName: "Número de Emisión / Issue Number",
-            name: "OD_EmissionNumber_Out",
-            text: "01"
+            "fieldName": "FUAR / FUAR",
+            "name": "OD_FUAR_Out",
+            "text": "00998"
           },
           {
-            fieldName: "FUAR / FUAR",
-            name: "OD_FUAR_Out",
-            text: "00998"
+            "fieldName": "",
+            "name": "OD_EmisionNumber_Out",
+            "text": ""
           },
           {
-            fieldName: "",
-            name: "OD_EmisionNumber_Out",
-            text: ""
+            "fieldName": "",
+            "name": "OD_Folio_Out",
+            "text": ""
           },
           {
-            fieldName: "",
-            name: "OD_Folio_Out",
-            text: ""
+            "fieldName": "",
+            "name": "PD_AddressDistrict_Out",
+            "text": ""
           },
           {
-            fieldName: "",
-            name: "PD_AddressDistrict_Out",
-            text: ""
-          },
-          {
-            fieldName: "",
-            name: "PD_AddressMunicipality_Out",
-            text: ""
+            "fieldName": "",
+            "name": "PD_AddressMunicipality_Out",
+            "text": ""
           }
         ],
-        triesNumber: 2
+        "triesNumber": 2
       },
-      messages: []
-    })
+      "messages": []
+    }
+    )
 
 
   } catch (error) {
@@ -314,18 +310,18 @@ const getPersonalInfo = async (req, res) => {
         res.status(200).json({
           result: true,
           data: {
-              code: "OK0001",
-              message: "PETICION EXITOSA",
-              curp: "SASJ010616HDFNNNA3",
-              name: "JUAN JESUS",
-              lastName: "SANTOS",
-              secondLastName: "SANCHEZ",
-              sex: "H",
-              birthDate: "16/06/2001",
-              birthPlace: "DF",
-              nationality: "MEX",
-              errorMessage: null,
-              errores: null
+            code: "OK0001",
+            message: "PETICION EXITOSA",
+            curp: "SASJ010616HDFNNNA3",
+            name: "JUAN JESUS",
+            lastName: "SANTOS",
+            secondLastName: "SANCHEZ",
+            sex: "H",
+            birthDate: "16/06/2001",
+            birthPlace: "DF",
+            nationality: "MEX",
+            errorMessage: null,
+            errores: null
           },
           messages: ["Información obtenida con éxito"]
         })
@@ -451,7 +447,7 @@ const onboardingRegister = async (req, res) => {
   }
 };
 
-const loginRegister = async (req, res) =>{
+const loginRegister = async (req, res) => {
 
   try {
     res.status(200).json({
@@ -479,4 +475,4 @@ const loginRegister = async (req, res) =>{
 }
 
 
-export { sendCodeClient, onboarding, validationCode, getPersonalInfo, getJwtGenerate, onboardingRegister,cobisOCR, loginRegister };
+export { sendCodeClient, onboarding, validationCode, getPersonalInfo, getJwtGenerate, onboardingRegister, cobisOCR, loginRegister };
