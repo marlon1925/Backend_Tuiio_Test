@@ -28,6 +28,6 @@ router.post("/orchestation/onboarding", bodyParser.json(),
 onboarding);
 router.post("/onboarding/register", bodyParser.json(),
 onboardingRegister);
-router.post("address", bodyParser.json(),Address);
+router.post("/address", bodyParser.json(),Address);
 
 export default router;
