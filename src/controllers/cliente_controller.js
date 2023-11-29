@@ -246,11 +246,29 @@ const getPersonalInfo = async (req, res) => {
       let infoCurp = getInfoCurp(req.body.curp);
 
       if (infoCurp) {
+        // res.status(200).json({
+        //   result: true,
+        //   data: { ...infoCurp },
+        //   messages: ["Información obtenida con éxito"],
+        // });
         res.status(200).json({
-          result: true,
-          data: { ...infoCurp },
-          messages: ["Información obtenida con éxito"],
-        });
+          "result": true,
+          "data": {
+              "code": "OK0001",
+              "message": "PETICION EXITOSA",
+              "curp": "SASJ010616HDFNNNA3",
+              "name": "JUAN JESUS",
+              "lastName": "SANTOS",
+              "secondLastName": "SANCHEZ",
+              "sex": "H",
+              "birthDate": "16/06/2001",
+              "birthPlace": "DF",
+              "nationality": "MEX",
+              "errorMessage": null,
+              "errores": null
+          },
+          "messages": ["Información obtenida con éxito"]
+        })
       } else {
         res.status(403).json({
           result: true,
