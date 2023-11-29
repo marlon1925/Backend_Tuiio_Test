@@ -202,7 +202,9 @@ const cobisOCR = async (req, res) => {
           {
             fieldName: "Año de Emisión/ Date of Expedition",
             name: "DD_ExpeditionDate_Out",
-            text: "31 12 27"
+            //text: "31 12 27"
+            text: "2012"
+
           },
           {
             fieldName: "Document Number",
