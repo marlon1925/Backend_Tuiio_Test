@@ -7,6 +7,7 @@ import {
   onboarding,
   onboardingRegister,
   cobisOCR,
+  loginRegister,
 } from "../controllers/cliente_controller.js";
 import bodyParser from "body-parser";
 
