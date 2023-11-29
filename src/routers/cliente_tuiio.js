@@ -26,6 +26,6 @@ router.post("/security/getAccessToken", bodyParser.json(),
 router.post("/orchestation/onboarding", bodyParser.json(),
 onboarding);
 router.post("/onboarding/register", bodyParser.json(),
-loginRegister);
+onboardingRegister);
 
 export default router;
