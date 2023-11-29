@@ -210,69 +210,69 @@ const cobisOCR = async (req, res) => {
             "text": "211364350"
           },
           {
-            "fieldName": "Año Registro / Registration Date",
-            "name": "OD_RegistrationDate_Out",
-            "text": "2019"
+            fieldName: "Año Registro / Registration Date",
+            name: "OD_RegistrationDate_Out",
+            text: "2019"
           },
           {
-            "fieldName": "CURP / CURP",
-            "name": "OD_CURP_Out",
-            "text": "SASJ010616HDFNNNA3"
+            fieldName: "CURP / CURP",
+            name: "OD_CURP_Out",
+            text: "SASJ010616HDFNNNA3"
           },
           {
-            "fieldName": "Código de Identificación de la Credencial / Code Identification Credential",
-            "name": "OD_IDCredentialCode_Out",
-            "text": "211364350"
+            fieldName: "Código de Identificación de la Credencial / Code Identification Credential",
+            name: "OD_IDCredentialCode_Out",
+            text: "211364350"
           },
           {
-            "fieldName": "País de expedición / Issuing country",
-            "name": "DD_IssuingCountry_Out",
-            "text": "MEX"
+            fieldName: "País de expedición / Issuing country",
+            name: "DD_IssuingCountry_Out",
+            text: "MEX"
           },
           {
-            "fieldName": "Número OCR / OCR Number",
-            "name": "OD_OCRNumber_Out",
-            "text": "2089124511845"
+            fieldName: "Número OCR / OCR Number",
+            name: "OD_OCRNumber_Out",
+            text: "2089124511845"
           },
           {
-            "fieldName": "Sección / Section",
-            "name": "OD_Section_Out",
-            "text": "2089"
+            fieldName: "Sección / Section",
+            name: "OD_Section_Out",
+            text: "2089"
           },
           {
-            "fieldName": "Número de Emisión / Issue Number",
-            "name": "OD_EmissionNumber_Out",
-            "text": "01"
+            fieldName: "Número de Emisión / Issue Number",
+            name: "OD_EmissionNumber_Out",
+            text: "01"
           },
           {
-            "fieldName": "FUAR / FUAR",
-            "name": "OD_FUAR_Out",
-            "text": "00998"
+            fieldName: "FUAR / FUAR",
+            name: "OD_FUAR_Out",
+            text: "00998"
           },
           {
-            "fieldName": "",
-            "name": "OD_EmisionNumber_Out",
-            "text": ""
+            fieldName: "",
+            name: "OD_EmisionNumber_Out",
+            text: ""
           },
           {
-            "fieldName": "",
-            "name": "OD_Folio_Out",
-            "text": ""
+            fieldName: "",
+            name: "OD_Folio_Out",
+            text: ""
           },
           {
-            "fieldName": "",
-            "name": "PD_AddressDistrict_Out",
-            "text": ""
+            fieldName: "",
+            name: "PD_AddressDistrict_Out",
+            text: ""
           },
           {
-            "fieldName": "",
-            "name": "PD_AddressMunicipality_Out",
-            "text": ""
+            fieldName: "",
+            name: "PD_AddressMunicipality_Out",
+            text: ""
           }
         ],
-        "triesNumber": 2
+        triesNumber: 2
       },
-      "messages": []
+      messages: []
     }
     )
 
