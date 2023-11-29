@@ -503,4 +503,25 @@ const simulation = async( req, res) =>{
     res.status(500).json({ result: false, message: "Error." });
   }
 }
-export { sendCodeClient,simulation, kyc,onboarding, validationCode, getPersonalInfo, getJwtGenerate, onboardingRegister, cobisOCR, Address };
+
+
+const createOperation = async( req, res) =>{
+  try {
+    res.status(200).json({
+      data: {
+        bank: "291030001840",
+        error: 0,
+        fechaFin: "13/03/2023",
+        fechaIni: "19/12/2022",
+        operation: 1056356,
+      },
+      messages: [],
+      result: true
+      
+    })
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ result: false, message: "Error." });
+  }
+}
+export { sendCodeClient,createOperation,simulation, kyc,onboarding, validationCode, getPersonalInfo, getJwtGenerate, onboardingRegister, cobisOCR, Address };
