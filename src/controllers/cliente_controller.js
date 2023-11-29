@@ -130,6 +130,103 @@ const validationCode = async (req, res) => {
   }
 };
 
+const cobisOCR = async (req, res) => {
+  try {
+    res.status(200).json({
+      result: true,
+      data: {
+        idExpediente: "554769202207120121530000",
+        idValidas: "610375adba3a4b7cb99b545fddbefd7b",
+        documentType: "MX_IDCard_2019",
+        ocr: [
+          {
+            fielName: "Nombre / Name",
+            name: "PD_Name_Out",
+            text: "JUAN JESUS",
+          },
+          {
+            fieldName: "Apellidos / Last Name",
+            name: "PD_LastName_Out",
+            text: "SANTOS SANCHEZ"
+          },
+          {
+            fieldName: "Primer Apellido / First Last Name",
+            name: "PD_LastName1_Out",
+            text: "SANTOS"
+          },
+          {
+            fieldName: "Segundo Apellido / Second Last Name",
+            name: "PD_LastName2_Out",
+            text: "SANCHEZ"
+          },
+          {
+            fieldName: "Clave de Elector / Elector Key",
+            name: "PD_IdentificationNumber_Out",
+            text: "SNSNIN01061609H500"
+          },
+          {
+            fieldName: "Código de Identificación de la Credencial / Code Identification Credential",
+            name: "OD_IDCredentialCode_Out",
+            text: "211364350"
+          },
+          {
+            fieldName: "País de expedición / Issuing country",
+            name: "DD_IssuingCountry_Out",
+            text: "MEX"
+          },
+          {
+            fieldName: "Número OCR / OCR Number",
+            name: "OD_OCRNumber_Out",
+            text: "2089124511845"
+          },
+          {
+            fieldName: "Sección / Section",
+            name: "OD_Section_Out",
+            text: "2089"
+          },
+          {
+            fieldName: "Número de Emisión / Issue Number",
+            name: "OD_EmissionNumber_Out",
+            text: "01"
+          },
+          {
+            fieldName: "FUAR / FUAR",
+            name: "OD_FUAR_Out",
+            text: "00998"
+          },
+          {
+            fieldName: "",
+            name: "OD_EmisionNumber_Out",
+            text: ""
+          },
+          {
+            fieldName: "",
+            name: "OD_Folio_Out",
+            text: ""
+          },
+          {
+            fieldName: "",
+            name: "PD_AddressDistrict_Out",
+            text: ""
+          },
+          {
+            fieldName: "",
+            name: "PD_AddressMunicipality_Out",
+            text: ""
+          }
+        ],
+        triesNumber: 2
+      },
+      messages: []
+    })
+
+
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ result: true, message: "Error." });
+  }
+}
+
 const getPersonalInfo = async (req, res) => {
   console.log("\n________________________________________");
   console.log("\nINICIA SERVICIO DE ENVIO DE CONSULTA POR CURP");
@@ -277,4 +374,4 @@ const onboardingRegister = async (req, res) => {
 };
 
 
-export { sendCodeClient, onboarding, validationCode, getPersonalInfo, getJwtGenerate,onboardingRegister };
+export { sendCodeClient, onboarding, validationCode, getPersonalInfo, getJwtGenerate, onboardingRegister,cobisOCR };

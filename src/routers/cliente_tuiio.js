@@ -6,6 +6,7 @@ import {
   validationCode,
   onboarding,
   onboardingRegister,
+  cobisOCR,
 } from "../controllers/cliente_controller.js";
 import bodyParser from "body-parser";
 
@@ -18,6 +19,7 @@ router.post(
   validationCode
 );
 router.post("/renapo/curp", bodyParser.json(), getPersonalInfo);
+router.post("/managequeue/ocrmsg", bodyParser.json(), cobisOCR);
 router.post("/security/getAccessToken", bodyParser.json(),
   getJwtGenerate);
 router.post("/orchestation/onboarding", bodyParser.json(),
