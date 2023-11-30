@@ -488,6 +488,7 @@ const simulation = async (req, res) => {
       data: {
         //REVISAR NUEVOS CAMBIOS REALIZADOS PROBAR
         amount: 6000,
+        amountPay: 6000,
         amountMax: "5000",
         client: "601766",
         currency: 0,
