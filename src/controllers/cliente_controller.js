@@ -142,148 +142,145 @@ const cobisOCR = async (req, res) => {
           {
             fieldName: "Nombre / Name",
             name: "PD_Name_Out",
-            text: "JUAN JESUS"
+            text: "JUAN JESUS",
           },
           {
             fieldName: "Apellidos / Last Name",
             name: "PD_LastName_Out",
-            text: "SANTOS SANCHEZ"
+            text: "SANTOS SANCHEZ",
           },
           {
             fieldName: "Primer Apellido / First Last Name",
             name: "PD_LastName1_Out",
-            text: "SANTOS"
+            text: "SANTOS",
           },
           {
             fieldName: "Segundo Apellido / Second Last Name",
             name: "PD_LastName2_Out",
-            text: "SANCHEZ"
+            text: "SANCHEZ",
           },
           {
             fieldName: "Clave de Elector / Elector Key",
             name: "PD_IdentificationNumber_Out",
-            text: "SNSNIN01061609H500"
+            text: "SNSNIN01061609H500",
           },
           {
             fieldName: "Fecha de Nacimiento / Date of Birth",
             name: "PD_BirthDate_Out",
-            text: "16 06 2001"
+            text: "16 06 2001",
           },
           {
             fieldName: "Sexo / Gender",
             name: "PD_Sex_Out",
-            text: "M"
+            text: "M",
           },
           {
             fieldName: "Nacionalidad / Nationality",
             name: "PD_Nationality_Out",
-            text: "MEX"
+            text: "MEX",
           },
           {
             fieldName: "Estado de Domicilio / State of Residence",
             name: "PD_AddressState_Out",
-            text: ""
+            text: "",
           },
           {
             fieldName: "Dirección  / Address",
             name: "PD_AddressStreet_Out",
-            text: "C TIZITLI MZ 39 LT 2\nCOL REY IZCOATL 56576"
+            text: "C TIZITLI MZ 39 LT 2\nCOL REY IZCOATL 56576",
           },
           {
             fieldName: "Estado de Nacimiento / State of Birt",
             name: "PD_BirthPlaceState_Out",
-            text: "09"
+            text: "09",
           },
           {
             fieldName: "Fecha de Validez / Expiration Date",
             name: "DD_ExpirationDate_Out",
-            text: "31 12 2031"
+            text: "31 12 2031",
           },
           {
             fieldName: "Año de Emisión/ Date of Expedition",
             name: "DD_ExpeditionDate_Out",
             //text: "31 12 27"
-            text: "2012"
-
+            text: "2012",
           },
           {
             fieldName: "Document Number",
             name: "DD_DocumentNumber_Out",
-            text: "211364350"
+            text: "211364350",
           },
           {
             fieldName: "Año Registro / Registration Date",
             name: "OD_RegistrationDate_Out",
-            text: "2019"
+            text: "2019",
           },
           {
             fieldName: "CURP / CURP",
             name: "OD_CURP_Out",
-            text: "SASJ010616HDFNNNA3"
+            text: "SASJ010616HDFNNNA3",
           },
           {
-            fieldName: "Código de Identificación de la Credencial / Code Identification Credential",
+            fieldName:
+              "Código de Identificación de la Credencial / Code Identification Credential",
             name: "OD_IDCredentialCode_Out",
-            text: "211364350"
+            text: "211364350",
           },
           {
             fieldName: "País de expedición / Issuing country",
             name: "DD_IssuingCountry_Out",
-            text: "MEX"
+            text: "MEX",
           },
           {
             fieldName: "Número OCR / OCR Number",
             name: "OD_OCRNumber_Out",
-            text: "2089124511845"
+            text: "2089124511845",
           },
           {
             fieldName: "Sección / Section",
             name: "OD_Section_Out",
-            text: "2089"
+            text: "2089",
           },
           {
             fieldName: "Número de Emisión / Issue Number",
             name: "OD_EmissionNumber_Out",
-            text: "01"
+            text: "01",
           },
           {
             fieldName: "FUAR / FUAR",
             name: "OD_FUAR_Out",
-            text: "00998"
+            text: "00998",
           },
           {
             fieldName: "",
             name: "OD_EmisionNumber_Out",
-            text: ""
+            text: "",
           },
           {
             fieldName: "",
             name: "OD_Folio_Out",
-            text: ""
+            text: "",
           },
           {
             fieldName: "",
             name: "PD_AddressDistrict_Out",
-            text: ""
+            text: "",
           },
           {
             fieldName: "",
             name: "PD_AddressMunicipality_Out",
-            text: ""
-          }
+            text: "",
+          },
         ],
-        triesNumber: 2
+        triesNumber: 2,
       },
-      messages: []
-    }
-    )
-
-
+      messages: [],
+    });
   } catch (error) {
     console.error(error);
     res.status(500).json({ result: false, message: "Error." });
   }
-}
+};
 
 const getPersonalInfo = async (req, res) => {
   console.log("\n________________________________________");
@@ -323,10 +320,10 @@ const getPersonalInfo = async (req, res) => {
             birthPlace: "DF",
             nationality: "MEX",
             errorMessage: null,
-            errores: null
+            errores: null,
           },
-          messages: ["Información obtenida con éxito"]
-        })
+          messages: ["Información obtenida con éxito"],
+        });
       } else {
         res.status(403).json({
           result: true,
@@ -369,17 +366,17 @@ const getJwtGenerate = async (req, res) => {
 
 const onboarding = async (req, res) => {
   try {
-
     res.status(200).json({
       result: true,
       data: {
-        urlWeb: "https://bion.santander.com.mx/?token=TjNS5V1rMTpWOHhoXpPTw+mZzLppFbeQj3K1PUKGXOghtpvmOiwmQQkgNJDBstZiucB3ahna4N42qfadWr0zqgmtSPBn9jtU8RdD/QlCUlsUNWRCX2iPRxt3h9Oz4E8DARQidLu7QT1uehDTq0TeYKijrQkbaGDwhcvFZiJGNs8b3uYLAOWKx/BW+ukSvanIICN37zbiZzPVkjFzRxFrHbn5iZnAuI/PST1qaiTMeOZcezD/sRPY/vhG88QV665IGGhrotX3cJxL06qoH+7drgGTKpOHwCmsSGQNg4SzJkrdOBmmClTzhta/lB+J/PYw5VWn2pmlZh61EM5hxgnVxg==",
+        urlWeb:
+          "https://bion.santander.com.mx/?token=TjNS5V1rMTpWOHhoXpPTw+mZzLppFbeQj3K1PUKGXOghtpvmOiwmQQkgNJDBstZiucB3ahna4N42qfadWr0zqgmtSPBn9jtU8RdD/QlCUlsUNWRCX2iPRxt3h9Oz4E8DARQidLu7QT1uehDTq0TeYKijrQkbaGDwhcvFZiJGNs8b3uYLAOWKx/BW+ukSvanIICN37zbiZzPVkjFzRxFrHbn5iZnAuI/PST1qaiTMeOZcezD/sRPY/vhG88QV665IGGhrotX3cJxL06qoH+7drgGTKpOHwCmsSGQNg4SzJkrdOBmmClTzhta/lB+J/PYw5VWn2pmlZh61EM5hxgnVxg==",
         idClient: null,
         idExpediente: "208832023011310050700000",
         code: null,
         message: null,
         opakeToken: null,
-        evaluation: null
+        evaluation: null,
       },
       messages: [],
     });
@@ -450,7 +447,6 @@ const onboardingRegister = async (req, res) => {
 };
 
 const Address = async (req, res) => {
-
   try {
     res.status(200).json({
       data: {
@@ -462,14 +458,13 @@ const Address = async (req, res) => {
       },
       messages: [],
       result: true,
-    })
+    });
   } catch (error) {
     console.error(error);
     res.status(500).json({ result: false, message: "Error." });
   }
-}
+};
 const kyc = async (req, res) => {
-
   try {
     res.status(200).json({
       data: {
@@ -480,32 +475,37 @@ const kyc = async (req, res) => {
       },
       messages: [],
       result: true,
-    })
+    });
   } catch (error) {
     console.error(error);
     res.status(500).json({ result: false, message: "Error." });
   }
+};
 
-}
-
-
-const simulation = async( req, res) =>{
+const simulation = async (req, res) => {
   try {
     res.status(200).json({
       data: {
-        amountPay: "200"
+        //REVISAR NUEVOS CAMBIOS REALIZADOS PROBAR
+        amount: 6000,
+        amountMax: "5000",
+        client: "601766",
+        currency: 0,
+        operationType: "INDIVIDUAL",
+        periodicity: "BW",
+        rate: 84,
+        term: 6,
       },
       messages: [],
       result: true,
-    })
+    });
   } catch (error) {
     console.error(error);
     res.status(500).json({ result: false, message: "Error." });
   }
-}
+};
 
-
-const createOperation = async( req, res) =>{
+const createOperation = async (req, res) => {
   try {
     res.status(200).json({
       data: {
@@ -516,12 +516,23 @@ const createOperation = async( req, res) =>{
         operation: 1056356,
       },
       messages: [],
-      result: true
-      
-    })
+      result: true,
+    });
   } catch (error) {
     console.error(error);
     res.status(500).json({ result: false, message: "Error." });
   }
-}
-export { sendCodeClient,createOperation,simulation, kyc,onboarding, validationCode, getPersonalInfo, getJwtGenerate, onboardingRegister, cobisOCR, Address };
+};
+export {
+  sendCodeClient,
+  createOperation,
+  simulation,
+  kyc,
+  onboarding,
+  validationCode,
+  getPersonalInfo,
+  getJwtGenerate,
+  onboardingRegister,
+  cobisOCR,
+  Address,
+};
