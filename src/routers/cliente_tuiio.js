@@ -11,6 +11,7 @@ import {
   kyc,
   simulation,
   createOperation,
+  flowRoute,
 } from "../controllers/cliente_controller.js";
 import bodyParser from "body-parser";
 
@@ -32,5 +33,6 @@ router.post("/customer/kycForm", bodyParser.json(), kyc);
 
 router.post("/loan/simulation", bodyParser.json(), simulation);
 router.post("/loan/createOperation", bodyParser.json(), createOperation);
+router.post("/security/flow/route", bodyParser.json(), flowRoute);
 
 export default router;

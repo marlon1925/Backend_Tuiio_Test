@@ -496,12 +496,12 @@ const simulation = async (req, res) => {
       data: {
         //REVISAR NUEVOS CAMBIOS REALIZADOS PROBAR
         amount: 6000,
-        amountPay: 6000,
+        amountPay: 5000,
         amountMax: "5000",
         client: "601766",
         currency: 0,
         operationType: "INDIVIDUAL",
-        periodicity: "BW",
+        periodicity: "M",
         rate: 84,
         term: 6,
       },
@@ -532,8 +532,27 @@ const createOperation = async (req, res) => {
     res.status(500).json({ result: false, message: "Error." });
   }
 };
+
+const flowRoute = async (req, res) => {
+  try {
+    res.status(200).json({
+      data: {
+        idActividad: 4,
+        idEnte: 601765,
+        idPantalla: 5,
+        idProceso: 2,
+      },
+      messages: [],
+      result: true,
+    });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ result: false, message: "Error." });
+  }
+};
 export {
   sendCodeClient,
+  flowRoute,
   createOperation,
   simulation,
   kyc,
