@@ -583,7 +583,9 @@ const evaluation = async (req, res) => {
         code: null,
         message: null,
         opakeToken: null,
-        evaluation: "APROBADO"
+        evaluation: "APROBADO",
+        amountApproved: 6000,
+
       },
       messages: [],
       result: true,
