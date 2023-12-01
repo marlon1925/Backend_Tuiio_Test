@@ -606,7 +606,6 @@ const altair = async (req, res) => {
           "1234567895",
         ],
         buc: "12345678",
-        name: "Juan Sanches",
         idRfc: "2222222",
         fullname: "Juan Lopez",
         customerId: 601766,
