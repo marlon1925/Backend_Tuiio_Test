@@ -594,9 +594,33 @@ const evaluation = async (req, res) => {
   }
 };
 
+const altair = async (req, res) => {
+  try {
+    res.status(200).json({
+      data: {
+        account:  [
+          "12345678901",
+          "1234567892",
+          "1234567893",
+          "1234567894",
+          "1234567895",
+        ],
+        buc: "12345678",
+        customerId: 601766,
+      },
+      messages: [],
+      result: true,
+    });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ result: false, message: "Error." });
+  }
+};
+
 export {
   sendCodeClient,
   fingerPrint,
+  altair,
   flowRoute,
   evaluation,
   createOperation,
