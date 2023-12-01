@@ -551,8 +551,31 @@ const flowRoute = async (req, res) => {
     res.status(500).json({ result: false, message: "Error." });
   }
 };
+
+const fingerPrint = async (req, res) => {
+  try {
+    res.status(200).json({
+      data: {
+        code: null,
+        evaluation: null,
+        idCliente: null,
+        idExpediente: null,
+        message: null,
+        opakeToken: "dWQdSXsgp2WL0IFX4hSAZTMhIf2XSbe+3dTlDcCJp55ILFy3KZwr9ebuxbCF1fKN1iLIayajo/GoPzpVCboDglkUv7MWnV2AOR/eg34MRmeK1T6/nwFn0Rs9Yy44A1IACdxHrpBb+c5dioStOrFbKam6oz0K7BLwMe5PvIkE8RhD8a210cGwepgoavDEQ4JYYoCtmN8ng1DhIkD3idTAcsWe9xEhL73vpjcFnw66bomCrd+GjuQ0iIPyyL2ZIh0M+wnvXySpL13TlgTh9WJWwE7Ay/a57AsuQquVlooiGwMyuKRvYoKt27twWYDbf0f6IW8QflzzIYgfuOe44pN9og==",
+        urlWeb: "https://biomovilfi.santander.com.mx/assets/crm-field.htm",
+      },
+      messages: [],
+      result: true,
+    });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ result: false, message: "Error." });
+  }
+};
+
 export {
   sendCodeClient,
+  fingerPrint,
   flowRoute,
   createOperation,
   simulation,
