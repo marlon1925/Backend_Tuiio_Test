@@ -598,7 +598,7 @@ const altair = async (req, res) => {
   try {
     res.status(200).json({
       data: {
-        account:  [
+        account: [
           "12345678901",
           "1234567892",
           "1234567893",
@@ -619,9 +619,26 @@ const altair = async (req, res) => {
     res.status(500).json({ result: false, message: "Error." });
   }
 };
-
+const prospect = async (req, res) => {
+  try {
+    res.status(200).json({
+      data: {
+        amountApproved: 6000,
+        customerId: 601766,
+        evaluation: true,
+        qualification: "A",
+      },
+      messages: [],
+      result: true,
+    });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ result: false, message: "Error." });
+  }
+};
 export {
   sendCodeClient,
+  prospect,
   fingerPrint,
   altair,
   flowRoute,
