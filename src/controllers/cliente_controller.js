@@ -496,6 +496,7 @@ const simulation = async (req, res) => {
       data: {
         //REVISAR NUEVOS CAMBIOS REALIZADOS PROBAR
         amount: 6000,
+        amountApproved: 6000,
         amountPay: 5000,
         amountMax: "5000",
         client: "601766",
