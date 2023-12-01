@@ -13,6 +13,7 @@ import {
   createOperation,
   flowRoute,
   fingerPrint,
+  evaluation,
 } from "../controllers/cliente_controller.js";
 import bodyParser from "body-parser";
 
@@ -36,6 +37,8 @@ router.post("/loan/simulation", bodyParser.json(), simulation);
 router.post("/loan/createOperation", bodyParser.json(), createOperation);
 router.post("/security/flow/route", bodyParser.json(), flowRoute);
 router.post("/capture/fingerprint", bodyParser.json(), fingerPrint);
+router.post("/customer/evaluation", bodyParser.json(), evaluation);
+
 
 
 export default router;

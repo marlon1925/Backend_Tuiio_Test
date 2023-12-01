@@ -573,10 +573,32 @@ const fingerPrint = async (req, res) => {
   }
 };
 
+const evaluation = async (req, res) => {
+  try {
+    res.status(200).json({
+      data: {
+        urlWeb: null,
+        idCliente: null,
+        idExpediente: null,
+        code: null,
+        message: null,
+        opakeToken: null,
+        evaluation: "APROBADO"
+      },
+      messages: [],
+      result: true,
+    });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ result: false, message: "Error." });
+  }
+};
+
 export {
   sendCodeClient,
   fingerPrint,
   flowRoute,
+  evaluation,
   createOperation,
   simulation,
   kyc,
