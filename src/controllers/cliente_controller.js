@@ -541,6 +541,7 @@ const flowRoute = async (req, res) => {
         idEnte: 601765,
         idPantalla: 5,
         idProceso: 2,
+        mode: 1
       },
       messages: [],
       result: true,
