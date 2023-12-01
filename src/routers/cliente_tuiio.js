@@ -15,6 +15,7 @@ import {
   fingerPrint,
   evaluation,
   altair,
+  prospect,
 } from "../controllers/cliente_controller.js";
 import bodyParser from "body-parser";
 
@@ -40,7 +41,7 @@ router.post("/security/flow/route", bodyParser.json(), flowRoute);
 router.post("/capture/fingerprint", bodyParser.json(), fingerPrint);
 router.post("/customer/evaluation", bodyParser.json(), evaluation);
 router.post("/customer/altair", bodyParser.json(), altair);
-
+router.post("/prospect", bodyParser.json(), prospect);
 
 
 
