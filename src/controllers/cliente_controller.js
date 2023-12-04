@@ -510,7 +510,7 @@ const simulation = async (req, res) => {
         amount: 6000,
         amountApproved: 6000,
         amountPay: 5000,
-        amountMax: "5000",
+        amountMax: 6000,
         client: "601766",
         currency: 0,
         operationType: "INDIVIDUAL",
@@ -597,7 +597,7 @@ const evaluation = async (req, res) => {
         message: null,
         opakeToken: null,
         evaluation: "APROBADO",
-        amountApproved: "5000",
+        amountApproved: 6000,
 
       },
       messages: [],
