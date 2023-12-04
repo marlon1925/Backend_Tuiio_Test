@@ -398,6 +398,7 @@ const onboardingRegister = async (req, res) => {
     const result = {
       result: true,
       data: {
+        idRfc: "JIJB840913Ey9",
         consent: {
           privacyNotice: "true",
           state: "true",
