@@ -621,8 +621,6 @@ const altair = async (req, res) => {
           "1234567895",
         ],
         buc: "12345678",
-        rfc: "2222222",
-        fullname: "Juan Lopez",
         customerId: 601766,
       },
       messages: [],
@@ -636,15 +634,15 @@ const altair = async (req, res) => {
 const prospect = async (req, res) => {
   try {
     res.status(200).json({
+      result:true,
       data: {
-        result: true,
         amountApproved: 6000,
         customerId: 601766,
         evaluation: true,
         qualification: "A",
       },
       messages: [],
-      result: false,
+      
     });
   } catch (error) {
     console.error(error);
