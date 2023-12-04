@@ -531,7 +531,7 @@ const createOperation = async (req, res) => {
   try {
     res.status(200).json({
       data: {
-        bank: "291030001840",
+        bank: 291030001840,
         error: 0,
         fechaFin: "13/03/2023",
         fechaIni: "19/12/2022",
