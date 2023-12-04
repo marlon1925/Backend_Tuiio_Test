@@ -598,7 +598,6 @@ const evaluation = async (req, res) => {
         opakeToken: null,
         evaluation: "APROBADO",
         amountApproved: 6000,
-        amount:5000,
 
       },
       messages: [],
@@ -645,6 +644,7 @@ const prospect = async (req, res) => {
         qualification: "A",
       },
       messages: [],
+      result: false,
     });
   } catch (error) {
     console.error(error);
