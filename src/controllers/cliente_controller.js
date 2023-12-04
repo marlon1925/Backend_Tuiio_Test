@@ -531,7 +531,7 @@ const createOperation = async (req, res) => {
   try {
     res.status(200).json({
       data: {
-        bank: 291030001840,
+        bank: "291030001840",
         error: 0,
         fechaFin: "13/03/2023",
         fechaIni: "19/12/2022",
@@ -634,7 +634,7 @@ const altair = async (req, res) => {
 const prospect = async (req, res) => {
   try {
     res.status(200).json({
-      result:true,
+      result: true,
       data: {
         amountApproved: 6000,
         customerId: 601766,
@@ -642,7 +642,7 @@ const prospect = async (req, res) => {
         qualification: "A",
       },
       messages: [],
-      
+
     });
   } catch (error) {
     console.error(error);
@@ -653,14 +653,14 @@ const login = async (req, res) => {
   try {
     res.status(200).json({
       result: false,
-    data: null,
-    messages: [
+      data: null,
+      messages: [
         {
-            code: "1875000",
-            message: "PROBLEMA EN LA CONEXION, POR FAVOR, NOTIFIQUE A SU OFICIAL DE CUENTA"
+          code: "1875000",
+          message: "PROBLEMA EN LA CONEXION, POR FAVOR, NOTIFIQUE A SU OFICIAL DE CUENTA"
         }
-    ]
-      
+      ]
+
     });
   } catch (error) {
     console.error(error);
@@ -669,7 +669,7 @@ const login = async (req, res) => {
 };
 export {
   sendCodeClient,
- login, 
+  login,
   prospect,
   fingerPrint,
   altair,
