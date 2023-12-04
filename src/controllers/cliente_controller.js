@@ -639,14 +639,12 @@ const prospect = async (req, res) => {
     res.status(200).json({
       data: {
         result: true,
-        amount:5000,
         amountApproved: 6000,
         customerId: 601766,
         evaluation: true,
         qualification: "A",
       },
       messages: [],
-      result: false,
     });
   } catch (error) {
     console.error(error);

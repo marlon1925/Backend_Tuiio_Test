@@ -41,7 +41,7 @@ router.post("/security/flow/route", bodyParser.json(), flowRoute);
 router.post("/capture/fingerprint", bodyParser.json(), fingerPrint);
 router.post("/customer/evaluation", bodyParser.json(), evaluation);
 router.post("/customer/altair", bodyParser.json(), altair);
-router.post("/prospect", bodyParser.json(), prospect);
+router.put("/prospect", bodyParser.json(), prospect);
 
 
 
