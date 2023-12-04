@@ -649,8 +649,27 @@ const prospect = async (req, res) => {
     res.status(500).json({ result: false, message: "Error." });
   }
 };
+const login = async (req, res) => {
+  try {
+    res.status(200).json({
+      result: false,
+    data: null,
+    messages: [
+        {
+            code: "1875000",
+            message: "PROBLEMA EN LA CONEXION, POR FAVOR, NOTIFIQUE A SU OFICIAL DE CUENTA"
+        }
+    ]
+      
+    });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ result: false, message: "Error." });
+  }
+};
 export {
   sendCodeClient,
+ login, 
   prospect,
   fingerPrint,
   altair,
