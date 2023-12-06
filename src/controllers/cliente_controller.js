@@ -129,37 +129,37 @@ const getRandomImages = async (req, res) => {
       data: [
         {
           imgData: "/9j/4QAQUBAQEBAQEAAAAAAAAAAwABA",
-          imgId: 93,
+          "imgId": 93,
           imgAlias: null,
           imgLegend: null
         },
         {
           imgData: "/9j/4QkFRXhpZgAATU0AKgAAAAgADAEAAAMA",
-          imgId: 35,
+          "imgId": 35,
           imgAlias: null,
           imgLegend: null
         },
         {
           imgData: "/9j/4Qn1RXhpZg",
-          imgId: 85,
+          "imgId": 85,
           imgAlias: null,
           imgLegend: null
         },
         {
           imgData: "/9j/4QX0RXhpZg",
-          imgId: 63,
+          "imgId": 63,
           imgAlias: null,
           imgLegend: null
         },
         {
           imgData: "iVBORw0KGgoAAAAN",
-          imgId: 53,
+          "imgId": 53,
           imgAlias: null,
           imgLegend: null
         },
         {
           imgData: "/9j/4QokRXhpZgAASUkqAAgAAA",
-          imgId: 52,
+          "imgId": 52,
           imgAlias: null,
           imgLegend: null
         }
@@ -344,13 +344,6 @@ const getPersonalInfo = async (req, res) => {
           result: true,
           data: {
             ...infoCurp,
-            message: "PETICION EXITOSA",
-            curp: "SASJ010616HDFNNNA3",
-            name: "JUAN JESUS",
-            lastName: "SANTOS",
-            secondLastName: "SANCHEZ",
-            sex: "H",
-            errores: null,
             birthDate: "16/06/2001",
             birthPlace: "DF",
             nationality: "MEX",
@@ -423,12 +416,10 @@ const onboarding = async (req, res) => {
 };
 const onboardingRegister = async (req, res) => {
   try {
-    res.status(200).json(result);
-
     const result = {
       result: true,
       data: {
-        idRfc: "JIJB840913EY9",
+        idRfc: "JIJB840913Ey9",
         customerId: "601765",
         enrollStatus: "S",
         idActividad: 1,
@@ -440,56 +431,56 @@ const onboardingRegister = async (req, res) => {
         nombreCompleto: "BEATRIZ  JIMENEZ JIMENEZ",
         phoneNumber: "0995855999",
         sessionTimeOut: "5",
-        // consent: {
-        //   privacyNotice: "true",
-        //   state: "true",
-        //   termsConditions: "true",
-        // },
-        // data: {
-        //   bioCic: "211364350",
-        //   bioEmissionNumber: "01",
-        //   bioIdentificationType: "INE",
-        //   bioOCR: "2089124511845",
-        //   bioReaderKey: "SNSNIN01061609H500",
-        //   birthdate: "2001-06-16",
-        //   birthplace: "DF",
-        //   codCliente: 0,
-        //   curp: "SASJ010616HDFNNNA3",
-        //   firstName: "JUAN",
-        //   gender: "H",
-        //   lastName: "SANTOS",
-        //   mail: "cacuangodarwin1999@gmail.com",
-        //   secondLastName: "SANCHEZ",
-        //   secondName: " JESUS",
-        // },
-        // modo: 0,
-        // security: {
-        //   geolocationPassword: {
-        //     dateAndTime: "2023-01-13 11:17:57",
-        //     latitude: "-0.1805775",
-        //     longitude: "-78.4886669",
-        //   },
-        //   mode: "I",
-        //   password: "123580",
-        //   phrase: "Frase",
-        //   proceedingsID: "554769202207120121530000",
-        //   welcomeImageId: 25,
-        // },
+        consent: {
+          privacyNotice: "true",
+          state: "true",
+          termsConditions: "true",
+        },
+        data: {
+          bioCic: "211364350",
+          bioEmissionNumber: "01",
+          bioIdentificationType: "INE",
+          bioOCR: "2089124511845",
+          bioReaderKey: "SNSNIN01061609H500",
+          birthdate: "2001-06-16",
+          birthplace: "DF",
+          codCliente: 0,
+          curp: "SASJ010616HDFNNNA3",
+          firstName: "JUAN",
+          gender: "H",
+          lastName: "SANTOS",
+          mail: "cacuangodarwin1999@gmail.com",
+          secondLastName: "SANCHEZ",
+          secondName: " JESUS",
+        },
+        modo: 0,
+        security: {
+          geolocationPassword: {
+            dateAndTime: "2023-01-13 11:17:57",
+            latitude: "-0.1805775",
+            longitude: "-78.4886669",
+          },
+          mode: "I",
+          password: "123580",
+          phrase: "Frase",
+          proceedingsID: "554769202207120121530000",
+          welcomeImageId: 25,
+        },
       },
-      message: [],
     };
+
     // Agregar información del dispositivo al JSON
-    // result.device = {
-    //   brandDevice: "Redmi",
-    //   carrier: "Claro",
-    //   cellphoneNumber: "0955853566",
-    //   connectAddress: "192.168.200.34",
-    //   device: "RKQ1.211001.001",
-    //   modelDevice: "2201117TG",
-    //   versionOS: "11",
-    // };
+    result.device = {
+      brandDevice: "Redmi",
+      carrier: "Claro",
+      cellphoneNumber: "0955853566",
+      connectAddress: "192.168.200.34",
+      device: "RKQ1.211001.001",
+      modelDevice: "2201117TG",
+      versionOS: "11",
+    };
 
-
+    res.status(200).json(result);
   } catch (error) {
     console.error(error);
     res.status(500).json({ result: false, message: "Error." });
@@ -579,14 +570,15 @@ const createOperation = async (req, res) => {
 const flowRoute = async (req, res) => {
   try {
     res.status(200).json({
-      result: true,
       data: {
         idActividad: 4,
         idEnte: 601765,
         idPantalla: 5,
         idProceso: 2,
+        mode: 1
       },
       messages: [],
+      result: true,
     });
   } catch (error) {
     console.error(error);
@@ -618,7 +610,6 @@ const fingerPrint = async (req, res) => {
 const evaluation = async (req, res) => {
   try {
     res.status(200).json({
-      result: true,
       data: {
         urlWeb: null,
         idCliente: null,
@@ -627,8 +618,11 @@ const evaluation = async (req, res) => {
         message: null,
         opakeToken: null,
         evaluation: "APROBADO",
+        amountApproved: 6000,
+
       },
       messages: [],
+      result: true,
     });
   } catch (error) {
     console.error(error);
@@ -744,7 +738,8 @@ const validateFingerPrint = async (req, res) => {
         opakeToken: null,
         urlWeb: null,
       },
-      messages: [],
+      "messages": [],
+      "result": true
     });
   } catch (error) {
     console.error(error);
@@ -752,55 +747,12 @@ const validateFingerPrint = async (req, res) => {
   }
 }
 
-const getInformation = async (req, res) => {
-  try {
-    res.status(200).json({
-      result: false,
-      data: null,
-      messages: [
-        {
-          code: "1890029",
-          message: "No existe Proceso para el ente indicado."
-        }
-      ]
-    });
-  } catch (error) {
-    console.error(error);
-    res.status(500).json({ result: false, message: "Error." });
-  }
-}
-const disbursement = async (req, res) => {
-  try {
-    res.status(200).json({
-      data: {
-        //REVISAR NUEVOS CAMBIOS REALIZADOS PROBAR
-        amount: 6000,
-        amountApproved: 6000,
-        amountPay: 6000,
-        amountMax: 6000,
-        client: 601766,
-        currency: 0,
-        operationType: "INDIVIDUAL",
-        periodicity: "M",
-        rate: 84,
-        term: 6,
-      },
-      messages: [],
-      result: true,
-    });
-  } catch (error) {
-    console.error(error);
-    res.status(500).json({ result: false, message: "Error." });
-  }
-};
 
 export {
   sendCodeClient,
   getRandomImages,
-  getInformation,
   saveLifeInsurance,
   validateFingerPrint,
-  disbursement,
   login,
   prospect,
   fingerPrint,
