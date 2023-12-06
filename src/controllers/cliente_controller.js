@@ -326,10 +326,6 @@ const cobisOCR = async (req, res) => {
 };
 
 const getPersonalInfo = async (req, res) => {
-  console.log("\n________________________________________");
-  console.log("\nINICIA SERVICIO DE ENVIO DE CONSULTA POR CURP");
-  console.log("\n________________________________________");
-  console.log("ESTO TIENE REQ: ", req.body);
   try {
     // Verificar que el campo 'code' no esté vacío
     if (!req.body.curp || req.body.curp.trim() === "") {
@@ -348,6 +344,13 @@ const getPersonalInfo = async (req, res) => {
           result: true,
           data: {
             ...infoCurp,
+            message: "PETICION EXITOSA",
+            curp: "SASJ010616HDFNNNA3",
+            name: "JUAN JESUS",
+            lastName: "SANTOS",
+            secondLastName: "SANCHEZ",
+            sex: "H",
+            errores: null,
             birthDate: "16/06/2001",
             birthPlace: "DF",
             nationality: "MEX",
@@ -357,24 +360,6 @@ const getPersonalInfo = async (req, res) => {
           },
           messages: ["Información obtenida con éxito"],
         });
-        // res.status(200).json({
-        //   result: true,
-        //   data: {
-        //     code: "OK0001",
-        //     message: "PETICION EXITOSA",
-        //     curp: "SASJ010616HDFNNNA3",
-        //     name: "JUAN JESUS",
-        //     lastName: "SANTOS",
-        //     secondLastName: "SANCHEZ",
-        //     sex: "H",
-        //     birthDate: "16/06/2001",
-        //     birthPlace: "DF",
-        //     nationality: "MEX",
-        //     errorMessage: null,
-        //     errores: null,
-        //   },
-        //   messages: ["Información obtenida con éxito"],
-        // });
       } else {
         res.status(403).json({
           result: true,
@@ -441,7 +426,7 @@ const onboardingRegister = async (req, res) => {
     const result = {
       result: true,
       data: {
-        idRfc: "JIJB840913Ey9",
+        idRfc: "JIJB840913EY9",
         customerId: "601765",
         enrollStatus: "S",
         idActividad: 1,
@@ -453,54 +438,54 @@ const onboardingRegister = async (req, res) => {
         nombreCompleto: "BEATRIZ  JIMENEZ JIMENEZ",
         phoneNumber: "0995855999",
         sessionTimeOut: "5",
-        consent: {
-          privacyNotice: "true",
-          state: "true",
-          termsConditions: "true",
-        },
-        data: {
-          bioCic: "211364350",
-          bioEmissionNumber: "01",
-          bioIdentificationType: "INE",
-          bioOCR: "2089124511845",
-          bioReaderKey: "SNSNIN01061609H500",
-          birthdate: "2001-06-16",
-          birthplace: "DF",
-          codCliente: 0,
-          curp: "SASJ010616HDFNNNA3",
-          firstName: "JUAN",
-          gender: "H",
-          lastName: "SANTOS",
-          mail: "cacuangodarwin1999@gmail.com",
-          secondLastName: "SANCHEZ",
-          secondName: " JESUS",
-        },
-        modo: 0,
-        security: {
-          geolocationPassword: {
-            dateAndTime: "2023-01-13 11:17:57",
-            latitude: "-0.1805775",
-            longitude: "-78.4886669",
-          },
-          mode: "I",
-          password: "123580",
-          phrase: "Frase",
-          proceedingsID: "554769202207120121530000",
-          welcomeImageId: 25,
-        },
+        // consent: {
+        //   privacyNotice: "true",
+        //   state: "true",
+        //   termsConditions: "true",
+        // },
+        // data: {
+        //   bioCic: "211364350",
+        //   bioEmissionNumber: "01",
+        //   bioIdentificationType: "INE",
+        //   bioOCR: "2089124511845",
+        //   bioReaderKey: "SNSNIN01061609H500",
+        //   birthdate: "2001-06-16",
+        //   birthplace: "DF",
+        //   codCliente: 0,
+        //   curp: "SASJ010616HDFNNNA3",
+        //   firstName: "JUAN",
+        //   gender: "H",
+        //   lastName: "SANTOS",
+        //   mail: "cacuangodarwin1999@gmail.com",
+        //   secondLastName: "SANCHEZ",
+        //   secondName: " JESUS",
+        // },
+        // modo: 0,
+        // security: {
+        //   geolocationPassword: {
+        //     dateAndTime: "2023-01-13 11:17:57",
+        //     latitude: "-0.1805775",
+        //     longitude: "-78.4886669",
+        //   },
+        //   mode: "I",
+        //   password: "123580",
+        //   phrase: "Frase",
+        //   proceedingsID: "554769202207120121530000",
+        //   welcomeImageId: 25,
+        // },
       },
+      message: [],
     };
-
     // Agregar información del dispositivo al JSON
-    result.device = {
-      brandDevice: "Redmi",
-      carrier: "Claro",
-      cellphoneNumber: "0955853566",
-      connectAddress: "192.168.200.34",
-      device: "RKQ1.211001.001",
-      modelDevice: "2201117TG",
-      versionOS: "11",
-    };
+    // result.device = {
+    //   brandDevice: "Redmi",
+    //   carrier: "Claro",
+    //   cellphoneNumber: "0955853566",
+    //   connectAddress: "192.168.200.34",
+    //   device: "RKQ1.211001.001",
+    //   modelDevice: "2201117TG",
+    //   versionOS: "11",
+    // };
 
     res.status(200).json(result);
   } catch (error) {
