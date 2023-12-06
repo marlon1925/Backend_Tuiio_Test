@@ -122,56 +122,6 @@ const validationCode = async (req, res) => {
   }
 };
 
-const getRandomImages = async (req, res) => {
-  try {
-    res.status(200).json({
-      result: true,
-      data: [
-        {
-          imgData: "/9j/4QAQUBAQEBAQEAAAAAAAAAAwABA",
-          "imgId": 93,
-          imgAlias: null,
-          imgLegend: null
-        },
-        {
-          imgData: "/9j/4QkFRXhpZgAATU0AKgAAAAgADAEAAAMA",
-          "imgId": 35,
-          imgAlias: null,
-          imgLegend: null
-        },
-        {
-          imgData: "/9j/4Qn1RXhpZg",
-          "imgId": 85,
-          imgAlias: null,
-          imgLegend: null
-        },
-        {
-          imgData: "/9j/4QX0RXhpZg",
-          "imgId": 63,
-          imgAlias: null,
-          imgLegend: null
-        },
-        {
-          imgData: "iVBORw0KGgoAAAAN",
-          "imgId": 53,
-          imgAlias: null,
-          imgLegend: null
-        },
-        {
-          imgData: "/9j/4QokRXhpZgAASUkqAAgAAA",
-          "imgId": 52,
-          imgAlias: null,
-          imgLegend: null
-        }
-      ],
-      messages: []
-    });
-  } catch (error) {
-    console.error(error);
-    res.status(500).json({ result: false, message: "Error." });
-  }
-};
-
 
 const cobisOCR = async (req, res) => {
   try {
@@ -724,7 +674,6 @@ const fingerprint = async (req, res) => {
     res.status(500).json({ result: false, message: "Error." });
   }
 }
-
 const validateFingerPrint = async (req, res) => {
   try {
     res.status(200).json({
@@ -747,7 +696,108 @@ const validateFingerPrint = async (req, res) => {
   }
 }
 
+const getRandomImages = async (req, res) => {
+  try {
+    res.status(200).json({
+      result: true,
+      data: [
+        {
+          imgData: "/9j/4QAQUBAQEBAQEAAAAAAAAAAwABA",
+          "imgId": 93,
+          imgAlias: null,
+          imgLegend: null
+        },
+        {
+          imgData: "/9j/4QkFRXhpZgAATU0AKgAAAAgADAEAAAMA",
+          "imgId": 35,
+          imgAlias: null,
+          imgLegend: null
+        },
+        {
+          imgData: "/9j/4Qn1RXhpZg",
+          "imgId": 85,
+          imgAlias: null,
+          imgLegend: null
+        },
+        {
+          imgData: "/9j/4QX0RXhpZg",
+          "imgId": 63,
+          imgAlias: null,
+          imgLegend: null
+        },
+        {
+          imgData: "iVBORw0KGgoAAAAN",
+          "imgId": 53,
+          imgAlias: null,
+          imgLegend: null
+        },
+        {
+          imgData: "/9j/4QokRXhpZgAASUkqAAgAAA",
+          "imgId": 52,
+          imgAlias: null,
+          imgLegend: null
+        }
+      ],
+      messages: [],
 
+    });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ result: false, message: "Error." });
+  }
+}
+const getInformation = async (req, res) => {
+  try {
+    res.status(200).json({
+      result: true,
+      data: null,
+      messages: [
+        {
+          code: "1890029",
+          message: "No existe Proceso para el ente indicado."
+        }
+      ],
+
+    });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ result: false, message: "Error." });
+  }
+}
+
+const disbursement = async (req, res) => {
+  try {
+    res.status(200).json({
+      result: true,
+      data: {
+        "com.cobiscorp.cobis.cts.service.response.output": {},
+        "com.cobiscorp.cobis.cts.service.response.return": 0,
+      },
+      messages: [
+        {
+          code: "0",
+          message: "--------&gt;&gt;&gt;&gt;&gt;AACH2- antes de ingresar a modificar",
+          type: null,
+        },
+        {
+          code: "0",
+          message: "---&gt;Liquidacion",
+          type: null,
+        },
+        {
+          code: "0",
+          message: "---&gt;@w_banco: 291030001840",
+          type: null,
+        },
+      ],
+      success: true,
+
+    });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ result: false, message: "Error." });
+  }
+}
 export {
   sendCodeClient,
   getRandomImages,
@@ -756,12 +806,14 @@ export {
   login,
   prospect,
   fingerPrint,
+  disbursement,
   altair,
   flowRoute,
   evaluation,
   createOperation,
   simulation,
   kyc,
+  getInformation,
   onboarding,
   validationCode,
   getPersonalInfo,
