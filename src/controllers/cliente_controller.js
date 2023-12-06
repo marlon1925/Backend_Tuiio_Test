@@ -667,8 +667,25 @@ const login = async (req, res) => {
     res.status(500).json({ result: false, message: "Error." });
   }
 };
+const saveLifeInsurance = async (req, res) => {
+  try {
+    res.status(200).json({
+      result: true,
+      data: {
+        "com.cobiscorp.cobis.cts.service.response.output": {},
+        "com.cobiscorp.cobis.cts.service.response.return": 0,
+      },
+      messages: [],
+      success: true,
+    });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ result: false, message: "Error." });
+  }
+};
 export {
   sendCodeClient,
+  saveLifeInsurance,
   login,
   prospect,
   fingerPrint,
