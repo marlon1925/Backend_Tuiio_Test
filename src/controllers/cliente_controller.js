@@ -129,37 +129,37 @@ const getRandomImages = async (req, res) => {
       data: [
         {
           imgData: "/9j/4QAQUBAQEBAQEAAAAAAAAAAwABA",
-          "imgId": 93,
+          imgId: 93,
           imgAlias: null,
           imgLegend: null
         },
         {
           imgData: "/9j/4QkFRXhpZgAATU0AKgAAAAgADAEAAAMA",
-          "imgId": 35,
+          imgId: 35,
           imgAlias: null,
           imgLegend: null
         },
         {
           imgData: "/9j/4Qn1RXhpZg",
-          "imgId": 85,
+          imgId: 85,
           imgAlias: null,
           imgLegend: null
         },
         {
           imgData: "/9j/4QX0RXhpZg",
-          "imgId": 63,
+          imgId: 63,
           imgAlias: null,
           imgLegend: null
         },
         {
           imgData: "iVBORw0KGgoAAAAN",
-          "imgId": 53,
+          imgId: 53,
           imgAlias: null,
           imgLegend: null
         },
         {
           imgData: "/9j/4QokRXhpZgAASUkqAAgAAA",
-          "imgId": 52,
+          imgId: 52,
           imgAlias: null,
           imgLegend: null
         }
@@ -423,6 +423,8 @@ const onboarding = async (req, res) => {
 };
 const onboardingRegister = async (req, res) => {
   try {
+    res.status(200).json(result);
+
     const result = {
       result: true,
       data: {
@@ -487,7 +489,7 @@ const onboardingRegister = async (req, res) => {
     //   versionOS: "11",
     // };
 
-    res.status(200).json(result);
+
   } catch (error) {
     console.error(error);
     res.status(500).json({ result: false, message: "Error." });
@@ -577,15 +579,14 @@ const createOperation = async (req, res) => {
 const flowRoute = async (req, res) => {
   try {
     res.status(200).json({
+      result: true,
       data: {
         idActividad: 4,
         idEnte: 601765,
         idPantalla: 5,
         idProceso: 2,
-        mode: 1
       },
       messages: [],
-      result: true,
     });
   } catch (error) {
     console.error(error);
@@ -617,6 +618,7 @@ const fingerPrint = async (req, res) => {
 const evaluation = async (req, res) => {
   try {
     res.status(200).json({
+      result: true,
       data: {
         urlWeb: null,
         idCliente: null,
@@ -625,11 +627,8 @@ const evaluation = async (req, res) => {
         message: null,
         opakeToken: null,
         evaluation: "APROBADO",
-        amountApproved: 6000,
-
       },
       messages: [],
-      result: true,
     });
   } catch (error) {
     console.error(error);
@@ -745,8 +744,7 @@ const validateFingerPrint = async (req, res) => {
         opakeToken: null,
         urlWeb: null,
       },
-      "messages": [],
-      "result": true
+      messages: [],
     });
   } catch (error) {
     console.error(error);
@@ -754,12 +752,55 @@ const validateFingerPrint = async (req, res) => {
   }
 }
 
+const getInformation = async (req, res) => {
+  try {
+    res.status(200).json({
+      result: false,
+      data: null,
+      messages: [
+        {
+          code: "1890029",
+          message: "No existe Proceso para el ente indicado."
+        }
+      ]
+    });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ result: false, message: "Error." });
+  }
+}
+const disbursement = async (req, res) => {
+  try {
+    res.status(200).json({
+      data: {
+        //REVISAR NUEVOS CAMBIOS REALIZADOS PROBAR
+        amount: 6000,
+        amountApproved: 6000,
+        amountPay: 6000,
+        amountMax: 6000,
+        client: 601766,
+        currency: 0,
+        operationType: "INDIVIDUAL",
+        periodicity: "M",
+        rate: 84,
+        term: 6,
+      },
+      messages: [],
+      result: true,
+    });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ result: false, message: "Error." });
+  }
+};
 
 export {
   sendCodeClient,
   getRandomImages,
+  getInformation,
   saveLifeInsurance,
   validateFingerPrint,
+  disbursement,
   login,
   prospect,
   fingerPrint,

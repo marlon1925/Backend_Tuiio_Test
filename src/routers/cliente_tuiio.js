@@ -20,6 +20,8 @@ import {
   saveLifeInsurance,
   validateFingerPrint,
   getRandomImages,
+  getInformation,
+  disbursement,
 } from "../controllers/cliente_controller.js";
 import bodyParser from "body-parser";
 
@@ -33,24 +35,22 @@ router.post("/managequeue/ocrmsg", bodyParser.json(), cobisOCR);
 router.post("/renapo/curp", bodyParser.json(), getPersonalInfo);
 router.post("/onboarding/register", bodyParser.json(), onboardingRegister);
 router.post("/security/getAccessToken", bodyParser.json(), getJwtGenerate);
-
-
-
-
-
+router.post("/security/flow/route", bodyParser.json(), flowRoute);
+router.post("/security/login", bodyParser.json(), login);
+router.post("/customer/altair", bodyParser.json(), altair);
+router.post("/security/client/getInformation", bodyParser.json(), getInformation);
 router.post("/address", bodyParser.json(), Address);
 router.post("/customer/kycForm", bodyParser.json(), kyc);
-router.post("/security/login", bodyParser.json(), login);
-router.post("/loan/simulation", bodyParser.json(), simulation);
-router.post("/loan/createOperation", bodyParser.json(), createOperation);
-router.post("/security/flow/route", bodyParser.json(), flowRoute);
-router.post("/capture/fingerprint", bodyParser.json(), fingerPrint);
 router.post("/customer/evaluation", bodyParser.json(), evaluation);
-router.post("/customer/altair", bodyParser.json(), altair);
 router.put("/prospect", bodyParser.json(), prospect);
-router.post("/customer/saveLifeInsurance", bodyParser.json(), saveLifeInsurance);
 router.post("/capture/fingerprint", bodyParser.json(), fingerPrint);
 router.post("/validate/fingerprint", bodyParser.json(), validateFingerPrint);
+router.post("/customer/saveLifeInsurance", bodyParser.json(), saveLifeInsurance);
+router.post("/loan/createOperation", bodyParser.json(), createOperation);
+router.post("/loan/simulation", bodyParser.json(), simulation);
+router.post("/loan/disbursement", bodyParser.json(), disbursement);
+
+
 
 
 
