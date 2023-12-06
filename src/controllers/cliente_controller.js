@@ -19,10 +19,6 @@ const getInfoCurp = (curp) => {
 };
 
 const sendCodeClient = async (req, res) => {
-  console.log("\n________________________________________");
-  console.log("\nINICIA SERVICIO DE ENVIO DE CÓDIGO OTP");
-  console.log("\n________________________________________");
-  console.log("ESTO TIENE REQ: ", req.body);
   try {
     // Verificar que todos los campos requeridos estén presentes
     const requiredFields = ["tipo", "canal", "phoneMail"];
@@ -77,10 +73,6 @@ const sendCodeClient = async (req, res) => {
 };
 
 const validationCode = async (req, res) => {
-  console.log("\n________________________________________");
-  console.log("\nINICIA SERVICIO DE VALIDACIÓN DE CÓDIGO OTP");
-  console.log("\n________________________________________");
-  console.log("ESTO TIENE REQ: ", req.body);
   try {
     // Verificar que todos los campos requeridos estén presentes
     const requiredFields = ["tipo", "canal", "phoneMail", "code"];
@@ -110,7 +102,7 @@ const validationCode = async (req, res) => {
       // Código válido
       res.status(200).json({
         result: true,
-        data: { idEnte: 0, idProce: 0, mode: 0 },
+        data: { value: "Validado", fecha: "Fri Jan 13 09:58:12 CST 2023" },
         messages: ["Código validado con éxito"],
       });
     } else {
@@ -129,6 +121,57 @@ const validationCode = async (req, res) => {
     });
   }
 };
+
+const getRandomImages = async (req, res) => {
+  try {
+    res.status(200).json({
+      result: true,
+      data: [
+        {
+          imgData: "/9j/4QAQUBAQEBAQEAAAAAAAAAAwABA",
+          "imgId": 93,
+          imgAlias: null,
+          imgLegend: null
+        },
+        {
+          imgData: "/9j/4QkFRXhpZgAATU0AKgAAAAgADAEAAAMA",
+          "imgId": 35,
+          imgAlias: null,
+          imgLegend: null
+        },
+        {
+          imgData: "/9j/4Qn1RXhpZg",
+          "imgId": 85,
+          imgAlias: null,
+          imgLegend: null
+        },
+        {
+          imgData: "/9j/4QX0RXhpZg",
+          "imgId": 63,
+          imgAlias: null,
+          imgLegend: null
+        },
+        {
+          imgData: "iVBORw0KGgoAAAAN",
+          "imgId": 53,
+          imgAlias: null,
+          imgLegend: null
+        },
+        {
+          imgData: "/9j/4QokRXhpZgAASUkqAAgAAA",
+          "imgId": 52,
+          imgAlias: null,
+          imgLegend: null
+        }
+      ],
+      messages: []
+    });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ result: false, message: "Error." });
+  }
+};
+
 
 const cobisOCR = async (req, res) => {
   try {
@@ -729,6 +772,7 @@ const validateFingerPrint = async (req, res) => {
 
 export {
   sendCodeClient,
+  getRandomImages,
   saveLifeInsurance,
   validateFingerPrint,
   login,

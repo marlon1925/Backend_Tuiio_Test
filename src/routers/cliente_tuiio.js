@@ -19,6 +19,7 @@ import {
   login,
   saveLifeInsurance,
   validateFingerPrint,
+  getRandomImages,
 } from "../controllers/cliente_controller.js";
 import bodyParser from "body-parser";
 
@@ -44,6 +45,8 @@ router.put("/prospect", bodyParser.json(), prospect);
 router.post("/customer/saveLifeInsurance", bodyParser.json(), saveLifeInsurance);
 router.post("/capture/fingerprint", bodyParser.json(), fingerPrint);
 router.post("/validate/fingerprint", bodyParser.json(), validateFingerPrint);
+router.get("/image/getRandomImages", bodyParser.json(), getRandomImages);
+
 
 
 
