@@ -18,6 +18,7 @@ import {
   prospect,
   login,
   saveLifeInsurance,
+  validateFingerPrint,
 } from "../controllers/cliente_controller.js";
 import bodyParser from "body-parser";
 
@@ -41,6 +42,7 @@ router.post("/customer/evaluation", bodyParser.json(), evaluation);
 router.post("/customer/altair", bodyParser.json(), altair);
 router.put("/prospect", bodyParser.json(), prospect);
 router.post("/customer/saveLifeInsurance", bodyParser.json(), saveLifeInsurance);
+router.post("/validate/fingerprint", bodyParser.json(), validateFingerPrintt);
 
 
 
