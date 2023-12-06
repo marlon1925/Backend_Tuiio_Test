@@ -698,15 +698,39 @@ const fingerprint = async (req, res) => {
       messages: [],
       result: true,
     })
-
   } catch (error) {
     console.error(error);
     res.status(500).json({ result: false, message: "Error." });
   }
 }
+
+const validateFingerPrint = async (req, res) => {
+  try {
+    res.status(200).json({
+      result: true,
+      data: {
+        code: null,
+        evaluation: "RECHAZADO",
+        idCliente: null,
+        idExpediente: null,
+        message: null,
+        opakeToken: null,
+        urlWeb: null,
+      },
+      "messages": [],
+      "result": true
+    });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ result: false, message: "Error." });
+  }
+}
+
+
 export {
   sendCodeClient,
   saveLifeInsurance,
+  validateFingerPrint,
   login,
   prospect,
   fingerPrint,
