@@ -2,6 +2,8 @@ import express from 'express'
 import dotenv from 'dotenv'
 import cors from 'cors';
 import routerCliente from './routers/cliente_tuiio.js'
+import routerAmin from '../src/routers/admin.js'
+
 
 
 // Inicializaciones
@@ -20,7 +22,9 @@ app.use(express.json())
 
 
 // Rutas 
-app.use('/CTSProxy/services/resources/channels/mobilebanking', routerCliente)
+// app.use('/CTSProxy/services/resources/channels/mobilebanking', routerCliente)
+app.use('/CTSProxy/services/resources/channels/mobilebanking', routerAmin)
+
 // Manejo de una ruta que no sea encontrada
 app.use((req, res) => res.status(404).send("Endpoint no encontrado - 404"))
 
