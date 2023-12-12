@@ -9,7 +9,7 @@ import { CambiarTelefono, DefinirContrasena, LoginAdmin, LogoutAdmin, ObtenerInf
 const router = Router();
 
 // router.post("/security/client/sendCode", bodyParser.json(), sendCodeClient);
-router.post("/security/login/loginAdmin", bodyParser.json(), LoginAdmin);
+router.post("/security/login", bodyParser.json(), LoginAdmin);
 router.post("/loan/elavonPayments", bodyParser.json(), PagosElavon);
 router.post("/client/parameters", bodyParser.json(), ObtenerParametrosPrestamo);
 router.post("/loan/info", bodyParser.json(), ObtenerInformacionPrestamo);
