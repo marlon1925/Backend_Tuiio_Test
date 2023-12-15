@@ -1,10 +1,19 @@
 import { Router } from "express";
-import {
-    sendCodeClient,
-
-} from "../controllers/cliente_controller.js";
+import { sendCodeClient } from "../controllers/cliente_controller.js";
 import bodyParser from "body-parser";
-import { CambiarTelefono, DefinirContrasena, LoginAdmin, LogoutAdmin, ObtenerInformacionPrestamo, ObtenerParametros, ObtenerParametrosPrestamo, PagosElavon, Prestamo, ReenvioEnrolamiento, ValidarEnrolamiento } from "../controllers/admin_controller.js";
+import {
+  CambiarTelefono,
+  DefinirContrasena,
+  LoginAdmin,
+  LogoutAdmin,
+  ObtenerInformacionPrestamo,
+  ObtenerParametros,
+  ObtenerParametrosPrestamo,
+  PagosElavon,
+  Prestamo,
+  ReenvioEnrolamiento,
+  ValidarEnrolamiento,
+} from "../controllers/admin_controller.js";
 
 const router = Router();
 
@@ -18,9 +27,7 @@ router.post("/security/onboard", bodyParser.json(), ValidarEnrolamiento);
 router.post("/mail/valid", bodyParser.json(), ReenvioEnrolamiento);
 router.post("/security/logout", bodyParser.json(), LogoutAdmin);
 router.post("/loan/info/prestamo", bodyParser.json(), Prestamo);
-router.get("/client/parameters", bodyParser.json(), ObtenerParametros);
+router.get("/security/client/parameters", bodyParser.json(), ObtenerParametros);
 router.put("/client/changePhone", bodyParser.json(), CambiarTelefono);
-
-
 
 export default router;
