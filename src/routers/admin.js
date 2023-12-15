@@ -25,13 +25,13 @@ router.post(
   bodyParser.json(),
   ObtenerParametrosPrestamo
 );
-router.post("loan/info", bodyParser.json(), ObtenerInformacionPrestamo); //igual
-router.post("security/password", bodyParser.json(), DefinirContrasena);
-router.post("security/onboard", bodyParser.json(), ValidarEnrolamiento);
-router.post("security/mail/valid", bodyParser.json(), ReenvioEnrolamiento);
-router.post("security/logout", bodyParser.json(), LogoutAdmin);
-router.post("loan/info", bodyParser.json(), Prestamo); //igual
-router.get("security/client/parameters", bodyParser.json(), ObtenerParametros);
-router.put("security/client/changePhone", bodyParser.json(), CambiarTelefono);
+router.post("/loan/info", bodyParser.json(), ObtenerInformacionPrestamo); //igual
+router.post("/security/password", bodyParser.json(), DefinirContrasena);
+router.post("/security/onboard", bodyParser.json(), ValidarEnrolamiento);
+router.post("/security/mail/valid", bodyParser.json(), ReenvioEnrolamiento);
+router.post("/security/logout", bodyParser.json(), LogoutAdmin);
+router.post("/loan/info", bodyParser.json(), Prestamo); //igual
+router.get("/security/client/parameters", bodyParser.json(), ObtenerParametros);
+router.put("/security/client/changePhone", bodyParser.json(), CambiarTelefono);
 
 export default router;
