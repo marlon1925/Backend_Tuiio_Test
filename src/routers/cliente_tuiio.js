@@ -28,7 +28,11 @@ import bodyParser from "body-parser";
 const router = Router();
 
 router.post("/security/client/sendCode", bodyParser.json(), sendCodeClient);
-router.post("/security/client/validationCode", bodyParser.json(), validationCode);
+router.post(
+  "/security/client/validationCode",
+  bodyParser.json(),
+  validationCode
+);
 router.get("/image/getRandomImages", bodyParser.json(), getRandomImages);
 router.post("/orchestation/onboarding", bodyParser.json(), onboarding);
 router.post("/managequeue/ocrmsg", bodyParser.json(), cobisOCR);
@@ -38,22 +42,27 @@ router.post("/security/getAccessToken", bodyParser.json(), getJwtGenerate);
 router.post("/security/flow/route", bodyParser.json(), flowRoute);
 router.post("/security/login", bodyParser.json(), login);
 router.post("/customer/altair", bodyParser.json(), altair);
-router.post("/security/client/getInformation", bodyParser.json(), getInformation);
+router.post(
+  "/security/client/getInformation",
+  bodyParser.json(),
+  getInformation
+);
 router.post("/address", bodyParser.json(), Address);
 router.post("/customer/kycForm", bodyParser.json(), kyc);
 router.post("/customer/evaluation", bodyParser.json(), evaluation);
 router.put("/prospect", bodyParser.json(), prospect);
 router.post("/capture/fingerprint", bodyParser.json(), fingerPrint);
 router.post("/validate/fingerprint", bodyParser.json(), validateFingerPrint);
-router.post("/customer/saveLifeInsurance", bodyParser.json(), saveLifeInsurance);
+router.post(
+  "/customer/saveLifeInsurance",
+  bodyParser.json(),
+  saveLifeInsurance
+);
 router.post("/loan/createOperation", bodyParser.json(), createOperation);
 router.post("/loan/simulation", bodyParser.json(), simulation);
 router.post("/loan/disbursement", bodyParser.json(), disbursement);
-
-
-
-
-
-
+router.post("/", bodyParser.json(), () => {
+  return "HOLA";
+});
 
 export default router;

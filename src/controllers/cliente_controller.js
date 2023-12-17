@@ -295,10 +295,17 @@ const getPersonalInfo = async (req, res) => {
       });
     }
 
+    if (!req.body.curp || req.body.curp.trim().length !== 18) {
+      return res.status(402).json({
+        result: false,
+        messages: ["Curp incorrecto"],
+      });
+    }
+
     // Lógica adicional de validación si es necesario
     if (req.body.curp) {
       let infoCurp = getInfoCurp(req.body.curp);
-
+      console.log("ESTO RESPONDE RENAPO CURP: ", infoCurp);
       if (infoCurp.length) {
         if (infoCurp.dataCurp) {
           res.status(200).json({
@@ -329,12 +336,6 @@ const getPersonalInfo = async (req, res) => {
             messages: ["Información obtenida con éxito"],
           });
         }
-      } else {
-        res.status(403).json({
-          result: true,
-          data: {},
-          messages: ["Curp incorrecto"],
-        });
       }
     }
   } catch (error) {
