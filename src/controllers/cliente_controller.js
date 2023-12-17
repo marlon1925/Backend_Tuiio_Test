@@ -15,7 +15,18 @@ const validateType = (phoneMail) => {
 };
 
 const getInfoCurp = (curp) => {
-  return CURP[curp];
+  let response = { length: false, dataCurp: null };
+  let dataCurp = CURP[curp];
+  if (curp.length === 18) {
+    response.length = true;
+  }
+  if (dataCurp) {
+    console.log("\n*********************************\n");
+    console.log("DATOS DE CURP EN BACKEND", dataCurp);
+    console.log("\n*********************************\n");
+    response.dataCurp = dataCurp;
+  }
+  return response;
 };
 
 const sendCodeClient = async (req, res) => {
@@ -121,7 +132,6 @@ const validationCode = async (req, res) => {
     });
   }
 };
-
 
 const cobisOCR = async (req, res) => {
   try {
@@ -289,20 +299,36 @@ const getPersonalInfo = async (req, res) => {
     if (req.body.curp) {
       let infoCurp = getInfoCurp(req.body.curp);
 
-      if (infoCurp) {
-        res.status(200).json({
-          result: true,
-          data: {
-            ...infoCurp,
-            birthDate: "16/06/2001",
-            birthPlace: "DF",
-            nationality: "MEX",
-            errorMessage: null,
-            code: "OK0001",
-            errores: null,
-          },
-          messages: ["Información obtenida con éxito"],
-        });
+      if (infoCurp.length) {
+        if (infoCurp.dataCurp) {
+          res.status(200).json({
+            result: true,
+            data: {
+              ...infoCurp.dataCurp,
+              // birthDate: "16/06/2001",
+              // birthPlace: "DF",
+              // nationality: "MEX",
+              // errorMessage: null,
+              // code: "OK0001",
+              // errores: null,
+            },
+            messages: ["Información obtenida con éxito"],
+          });
+        } else {
+          res.status(200).json({
+            result: true,
+            data: {
+              ...CURP.SASK010903HDFLMNT5,
+              // birthDate: "16/06/2001",
+              // birthPlace: "DF",
+              // nationality: "MEX",
+              // errorMessage: null,
+              // code: "OK0001",
+              // errores: null,
+            },
+            messages: ["Información obtenida con éxito"],
+          });
+        }
       } else {
         res.status(403).json({
           result: true,
@@ -525,7 +551,7 @@ const flowRoute = async (req, res) => {
         idEnte: 601765,
         idPantalla: 5,
         idProceso: 2,
-        mode: 1
+        mode: 1,
       },
       messages: [],
       result: true,
@@ -545,7 +571,8 @@ const fingerPrint = async (req, res) => {
         idCliente: null,
         idExpediente: null,
         message: null,
-        opakeToken: "dWQdSXsgp2WL0IFX4hSAZTMhIf2XSbe+3dTlDcCJp55ILFy3KZwr9ebuxbCF1fKN1iLIayajo/GoPzpVCboDglkUv7MWnV2AOR/eg34MRmeK1T6/nwFn0Rs9Yy44A1IACdxHrpBb+c5dioStOrFbKam6oz0K7BLwMe5PvIkE8RhD8a210cGwepgoavDEQ4JYYoCtmN8ng1DhIkD3idTAcsWe9xEhL73vpjcFnw66bomCrd+GjuQ0iIPyyL2ZIh0M+wnvXySpL13TlgTh9WJWwE7Ay/a57AsuQquVlooiGwMyuKRvYoKt27twWYDbf0f6IW8QflzzIYgfuOe44pN9og==",
+        opakeToken:
+          "dWQdSXsgp2WL0IFX4hSAZTMhIf2XSbe+3dTlDcCJp55ILFy3KZwr9ebuxbCF1fKN1iLIayajo/GoPzpVCboDglkUv7MWnV2AOR/eg34MRmeK1T6/nwFn0Rs9Yy44A1IACdxHrpBb+c5dioStOrFbKam6oz0K7BLwMe5PvIkE8RhD8a210cGwepgoavDEQ4JYYoCtmN8ng1DhIkD3idTAcsWe9xEhL73vpjcFnw66bomCrd+GjuQ0iIPyyL2ZIh0M+wnvXySpL13TlgTh9WJWwE7Ay/a57AsuQquVlooiGwMyuKRvYoKt27twWYDbf0f6IW8QflzzIYgfuOe44pN9og==",
         urlWeb: "https://biomovilfi.santander.com.mx/assets/crm-field.htm",
       },
       messages: [],
@@ -569,7 +596,6 @@ const evaluation = async (req, res) => {
         opakeToken: null,
         evaluation: "APROBADO",
         amountApproved: 6000,
-
       },
       messages: [],
       result: true,
@@ -613,7 +639,6 @@ const prospect = async (req, res) => {
         qualification: "A",
       },
       messages: [],
-
     });
   } catch (error) {
     console.error(error);
@@ -628,10 +653,10 @@ const login = async (req, res) => {
       messages: [
         {
           code: "1875000",
-          message: "PROBLEMA EN LA CONEXION, POR FAVOR, NOTIFIQUE A SU OFICIAL DE CUENTA"
-        }
-      ]
-
+          message:
+            "PROBLEMA EN LA CONEXION, POR FAVOR, NOTIFIQUE A SU OFICIAL DE CUENTA",
+        },
+      ],
     });
   } catch (error) {
     console.error(error);
@@ -663,17 +688,18 @@ const fingerprint = async (req, res) => {
         idCliente: null,
         idExpediente: null,
         message: null,
-        opakeToken: "dWQdSXsgp2WL0IFX4hSAZTMhIf2XSbe+3dTlDcCJp55ILFy3KZwr9ebuxbCF1fKN1iLIayajo/GoPzpVCboDglkUv7MWnV2AOR/eg34MRmeK1T6/nwFn0Rs9Yy44A1IACdxHrpBb+c5dioStOrFbKam6oz0K7BLwMe5PvIkE8RhD8a210cGwepgoavDEQ4JYYoCtmN8ng1DhIkD3idTAcsWe9xEhL73vpjcFnw66bomCrd+GjuQ0iIPyyL2ZIh0M+wnvXySpL13TlgTh9WJWwE7Ay/a57AsuQquVlooiGwMyuKRvYoKt27twWYDbf0f6IW8QflzzIYgfuOe44pN9og==",
+        opakeToken:
+          "dWQdSXsgp2WL0IFX4hSAZTMhIf2XSbe+3dTlDcCJp55ILFy3KZwr9ebuxbCF1fKN1iLIayajo/GoPzpVCboDglkUv7MWnV2AOR/eg34MRmeK1T6/nwFn0Rs9Yy44A1IACdxHrpBb+c5dioStOrFbKam6oz0K7BLwMe5PvIkE8RhD8a210cGwepgoavDEQ4JYYoCtmN8ng1DhIkD3idTAcsWe9xEhL73vpjcFnw66bomCrd+GjuQ0iIPyyL2ZIh0M+wnvXySpL13TlgTh9WJWwE7Ay/a57AsuQquVlooiGwMyuKRvYoKt27twWYDbf0f6IW8QflzzIYgfuOe44pN9og==",
         urlWeb: "https://biomovilfi.santander.com.mx/assets/crm-field.htm",
       },
       messages: [],
       result: true,
-    })
+    });
   } catch (error) {
     console.error(error);
     res.status(500).json({ result: false, message: "Error." });
   }
-}
+};
 const validateFingerPrint = async (req, res) => {
   try {
     res.status(200).json({
@@ -687,14 +713,14 @@ const validateFingerPrint = async (req, res) => {
         opakeToken: null,
         urlWeb: null,
       },
-      "messages": [],
-      "result": true
+      messages: [],
+      result: true,
     });
   } catch (error) {
     console.error(error);
     res.status(500).json({ result: false, message: "Error." });
   }
-}
+};
 
 const getRandomImages = async (req, res) => {
   try {
@@ -703,49 +729,48 @@ const getRandomImages = async (req, res) => {
       data: [
         {
           imgData: "/9j/4QAQUBAQEBAQEAAAAAAAAAAwABA",
-          "imgId": 93,
+          imgId: 93,
           imgAlias: null,
-          imgLegend: null
+          imgLegend: null,
         },
         {
           imgData: "/9j/4QkFRXhpZgAATU0AKgAAAAgADAEAAAMA",
-          "imgId": 35,
+          imgId: 35,
           imgAlias: null,
-          imgLegend: null
+          imgLegend: null,
         },
         {
           imgData: "/9j/4Qn1RXhpZg",
-          "imgId": 85,
+          imgId: 85,
           imgAlias: null,
-          imgLegend: null
+          imgLegend: null,
         },
         {
           imgData: "/9j/4QX0RXhpZg",
-          "imgId": 63,
+          imgId: 63,
           imgAlias: null,
-          imgLegend: null
+          imgLegend: null,
         },
         {
           imgData: "iVBORw0KGgoAAAAN",
-          "imgId": 53,
+          imgId: 53,
           imgAlias: null,
-          imgLegend: null
+          imgLegend: null,
         },
         {
           imgData: "/9j/4QokRXhpZgAASUkqAAgAAA",
-          "imgId": 52,
+          imgId: 52,
           imgAlias: null,
-          imgLegend: null
-        }
+          imgLegend: null,
+        },
       ],
       messages: [],
-
     });
   } catch (error) {
     console.error(error);
     res.status(500).json({ result: false, message: "Error." });
   }
-}
+};
 const getInformation = async (req, res) => {
   try {
     res.status(200).json({
@@ -754,16 +779,15 @@ const getInformation = async (req, res) => {
       messages: [
         {
           code: "1890029",
-          message: "No existe Proceso para el ente indicado."
-        }
+          message: "No existe Proceso para el ente indicado.",
+        },
       ],
-
     });
   } catch (error) {
     console.error(error);
     res.status(500).json({ result: false, message: "Error." });
   }
-}
+};
 
 const disbursement = async (req, res) => {
   try {
@@ -776,7 +800,8 @@ const disbursement = async (req, res) => {
       messages: [
         {
           code: "0",
-          message: "--------&gt;&gt;&gt;&gt;&gt;AACH2- antes de ingresar a modificar",
+          message:
+            "--------&gt;&gt;&gt;&gt;&gt;AACH2- antes de ingresar a modificar",
           type: null,
         },
         {
@@ -791,13 +816,12 @@ const disbursement = async (req, res) => {
         },
       ],
       success: true,
-
     });
   } catch (error) {
     console.error(error);
     res.status(500).json({ result: false, message: "Error." });
   }
-}
+};
 export {
   sendCodeClient,
   getRandomImages,
