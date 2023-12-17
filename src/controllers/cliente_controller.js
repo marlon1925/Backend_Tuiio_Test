@@ -359,7 +359,7 @@ const getJwtGenerate = async (req, res) => {
     res.status(200).json({
       result: true,
       data: { token: "abcd" },
-      messages: [],
+      messages: ["El JWT se ha generado correctamente."],
     });
   } catch (error) {
     console.log(error);
