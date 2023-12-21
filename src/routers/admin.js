@@ -20,11 +20,7 @@ const router = Router();
 // router.post("/security/client/sendCode", bodyParser.json(), sendCodeClient);
 router.post("security/login", bodyParser.json(), LoginAdmin);
 router.post("loan/elavonPayments", bodyParser.json(), PagosElavon);
-router.post(
-  "security/client/parameters",
-  bodyParser.json(),
-  ObtenerParametrosPrestamo
-);
+router.post("security/client/parameters", bodyParser.json(), ObtenerParametrosPrestamo);
 router.post("/loan/info", bodyParser.json(), ObtenerInformacionPrestamo); //igual
 router.post("/security/password", bodyParser.json(), DefinirContrasena);
 router.post("/security/onboard", bodyParser.json(), ValidarEnrolamiento);
