@@ -93,7 +93,10 @@ const PagosElavon = async (req, res) => {
     } else {
       res.status(200).json({
         result: true,
-        data: { code: "" },
+        data: {
+          loanId: "223810355675",
+          urlPayLeague: "https://u.mitec.com.mx/p/i/AD9PFZA1"
+        },
         messages: [],
       });
     }
